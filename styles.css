@@ -1,0 +1,87 @@
+/* Define colors for the scheme */
+:root {
+    --coconut-green: #4CAF50;  /* A suitable shade of coconut green */
+    --cocopeat-brown: #8B4513;  /* A brown shade representing coco peat */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: var(--coconut-green);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+    padding-bottom: 5rem; /* Add bottom space */
+}
+
+.product-image, .about-image, .contact-image, .eco-logo {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better appearance */
+}
+
+footer {
+    background-color: var(--cocopeat-brown);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+section {
+    margin-bottom: 2rem; /* Add space between sections */
+}
+
+h2 {
+    color: var(--coconut-green);
+    margin-bottom: 1rem;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--coconut-green);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
