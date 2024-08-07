@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://dprabhua.github.io/mayuracoirs-website/</loc>
-    <lastmod>2024-08-06</lastmod>
+    <loc>https://mayuracoirs.com/</loc>
+    <lastmod>2024-08-07</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://dprabhua.github.io/mayuracoirs-website/about.html</loc>
-    <lastmod>2024-08-06</lastmod>
+    <loc>https://mayuracoirs.com/about.html</loc>
+    <lastmod>2024-08-07</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://dprabhua.github.io/mayuracoirs-website/contact.html</loc>
-    <lastmod>2024-08-06</lastmod>
+    <loc>https://mayuracoirs.com/contact.html</loc>
+    <lastmod>2024-08-07</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://mayuracoirs.com/usecases.html</loc>
+    <lastmod>2024-08-07</lastmod>
     <priority>0.80</priority>
   </url>
 </urlset>
