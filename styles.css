@@ -44,7 +44,7 @@ main {
     margin: 1rem;
 }
 
-.product-image, .about-image, .contact-image, .eco-logo {
+.product-image, .about-image, .contact-image, .usecase-image, .eco-logo {
     width: 100%;
     max-width: 600px;
     height: auto;
@@ -52,6 +52,11 @@ main {
     margin: 1rem auto;
     border-radius: 10px; /* Add rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better appearance */
+}
+
+.adsense-ad, .direct-ad {
+    margin: 2rem 0;
+    text-align: center;
 }
 
 footer {
@@ -73,8 +78,18 @@ h2 {
     margin-bottom: 1rem;
 }
 
+h3, h4 {
+    color: var(--cocopeat-brown);
+    margin-bottom: 1rem;
+}
+
 p {
     line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+ol {
+    margin-left: 1.5rem;
     margin-bottom: 1rem;
 }
 
