@@ -44,9 +44,9 @@ main {
     margin: 1rem;
 }
 
-.product-image, .about-image, .contact-image, .usecase-image, .eco-logo {
+.product-image-small, .eco-logo-small {
     width: 100%;
-    max-width: 600px;
+    max-width: 400px; /* Make images smaller */
     height: auto;
     display: block;
     margin: 1rem auto;
@@ -107,14 +107,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    header, main, footer {
-        padding: 1rem;
-    }
-    nav ul li {
-        display: block;
-        margin: 0.5rem 0;
-    }
-}
-
+.testimonial {
+    background-color: #e0f7fa;
+    padding:
