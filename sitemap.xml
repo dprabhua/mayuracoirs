@@ -1,23 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://mayuracoirs.com/</loc>
-    <lastmod>2024-08-07</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://mayuracoirs.com/about.html</loc>
-    <lastmod>2024-08-07</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://mayuracoirs.com/contact.html</loc>
-    <lastmod>2024-08-07</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://mayuracoirs.com/usecases.html</loc>
-    <lastmod>2024-08-07</lastmod>
-    <priority>0.80</priority>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://mayuracoirs.com/</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mayuracoirs.com/"/>
+        <xhtml:link rel="alternate" hreflang="ta" href="https://mayuracoirs.com/ta/"/>
+    </url>
+    <url>
+        <loc>https://mayuracoirs.com/about.html</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mayuracoirs.com/about.html"/>
+        <xhtml:link rel="alternate" hreflang="ta" href="https://mayuracoirs.com/ta/about.html"/>
+    </url>
+    <url>
+        <loc>https://mayuracoirs.com/products.html</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mayuracoirs.com/products.html"/>
+        <xhtml:link rel="alternate" hreflang="ta" href="https://mayuracoirs.com/ta/products.html"/>
+    </url>
+    <url>
+        <loc>https://mayuracoirs.com/usecases.html</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mayuracoirs.com/usecases.html"/>
+        <xhtml:link rel="alternate" hreflang="ta" href="https://mayuracoirs.com/ta/usecases.html"/>
+    </url>
+    <url>
+        <loc>https://mayuracoirs.com/contact.html</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mayuracoirs.com/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="ta" href="https://mayuracoirs.com/ta/contact.html"/>
+    </url>
+    <url>
+        <loc>https://mayuracoirs.com/privacy-policy.html</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mayuracoirs.com/privacy-policy.html"/>
+        <xhtml:link rel="alternate" hreflang="ta" href="https://mayuracoirs.com/ta/privacy-policy.html"/>
+    </url>
+    <url>
+        <loc>https://mayuracoirs.com/terms.html</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mayuracoirs.com/terms.html"/>
+        <xhtml:link rel="alternate" hreflang="ta" href="https://mayuracoirs.com/ta/terms.html"/>
+    </url>
 </urlset>

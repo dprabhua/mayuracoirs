@@ -9,5 +9,18 @@ Allow: /pagead/*/show_ads_impl.js
 Allow: /static/glade.js
 Allow: /static/glade/
 Allow: /tag/js/
-Disallow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /temp/
+Disallow: /cgi-bin/
+Disallow: /includes/
+Disallow: /images/private/
 Noindex: /
+
+Sitemap: https://mayuracoirs.com/sitemap.xml
+
+# Crawl-delay: 10
+# Allow: /sitemap.xml
+# Allow: /images/public/
+# Allow: /css/
+# Allow: /js/
