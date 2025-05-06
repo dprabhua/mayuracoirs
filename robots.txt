@@ -1,47 +1,52 @@
-User-Agent: *
-Allow: /ads/preferences/
+# Global rules
+User-agent: *
 Allow: /
-Allow: /dtt/k
-Allow: /gpt/
-Allow: /pagead/show_ads.js
-Allow: /pagead/js/adsbygoogle.js
-Allow: /pagead/*/show_ads_impl.js
-Allow: /static/glade.js
-Allow: /static/glade/
-Allow: /tag/js/
-Allow: /index.html
-Allow: /about.html
-Allow: /products.html
-Allow: /usecases.html
-Allow: /contact.html
-Allow: /privacy-policy.html
-Allow: /terms.html
-
-# Product Pages
-Allow: /high-ec-cocopeat-blocks.html
-Allow: /high-ec-coco-husk-chip-blocks.html
-Allow: /high-ec-cocopeat-blocks-small.html
-Allow: /low-ec-cocopeat-blocks.html
-Allow: /low-ec-coco-husk-chip-blocks.html
-Allow: /low-ec-cocopeat-blocks-small.html
-Allow: /baby-coir-bales.html
-Allow: /cocopeat-grow-bags.html
-
-# Sitemap
-Sitemap: https://mayuracoirs.com/sitemap.xml
-
-# Crawl-delay
-Crawl-delay: 10
-
-# Disallow admin and private directories
 Disallow: /admin/
 Disallow: /private/
 Disallow: /cgi-bin/
 Disallow: /tmp/
 Disallow: /logs/
+Disallow: /draft/
+Disallow: /unpublished/
 
-# Crawl-delay: 10
-# Allow: /sitemap.xml
-# Allow: /images/public/
-# Allow: /css/
-# Allow: /js/
+# Allow important directories
+Allow: /images/
+Allow: /css/
+Allow: /js/
+Allow: /fonts/
+
+# Allow all HTML pages
+Allow: /*.html$
+
+# Allow sitemap
+Allow: /sitemap.xml
+
+# Crawl rate
+Crawl-delay: 10
+
+# Sitemap location
+Sitemap: https://mayuracoirs.com/sitemap.xml
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 5
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 5
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 5
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 5
+
+# Block archive.org
+User-agent: archive.org_bot
+Disallow: /
+
+User-agent: ia_archiver
+Disallow: /
