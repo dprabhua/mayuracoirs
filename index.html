@@ -302,6 +302,18 @@
             {
                 "@type": "ListItem",
                 "position": 4,
+                "name": "Blog",
+                "item": "https://mayuracoirs.com/blog.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "FAQ",
+                "item": "https://mayuracoirs.com/faq.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 6,
                 "name": "Contact",
                 "item": "https://mayuracoirs.com/contact.html"
             }
@@ -402,11 +414,14 @@
         }
     </script>
 
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Stylesheets -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="src/static/css/engagement.css">
 </head>
 <body>
+    <!-- Common Header -->
     <header class="header">
         <nav class="navbar">
             <div class="container">
@@ -419,7 +434,7 @@
                     <span></span>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li class="dropdown">
                         <a href="products.html" class="dropdown-toggle">Products</a>
@@ -444,8 +459,12 @@
                             <li><a href="cocopeat-grow-bags.html">Cocopeat Grow Bags</a></li>
                         </ul>
                     </li>
+                    <li><a href="manufacturing.html">Manufacturing</a></li>
+                    <li><a href="quality-process.html">Quality</a></li>
                     <li><a href="usecases.html">Use Cases</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </div>
         </nav>
@@ -478,7 +497,7 @@
                 <div class="product-grid">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/placeholder.jpg" data-src="images/cocopeat.jpg" alt="Premium Cocopeat Blocks for Hydroponics - Natural Soil Amendment for Organic Gardening" loading="lazy">
+                            <img src="images/cocopeat.jpg" alt="Premium Cocopeat Blocks for Hydroponics - Natural Soil Amendment for Organic Gardening">
                         </div>
                         <div class="product-content">
                         <h3>Cocopeat Blocks</h3>
@@ -488,7 +507,7 @@
                     </div>
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/placeholder.jpg" data-src="images/coir-pith.jpg" alt="Organic Coir Pith for Sustainable Agriculture - Natural Soil Conditioner for Organic Farming" loading="lazy">
+                            <img src="images/coir-pith.jpg" alt="Organic Coir Pith for Sustainable Agriculture - Natural Soil Conditioner for Organic Farming">
                         </div>
                         <div class="product-content">
                             <h3>Coir Pith</h3>
@@ -498,7 +517,7 @@
                     </div>
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/placeholder.jpg" data-src="images/soil-solutions.jpg" alt="Custom Soil Solutions for Agriculture - Specialized Growing Mediums for Different Crops" loading="lazy">
+                            <img src="images/soil-solutions.jpg" alt="Custom Soil Solutions for Agriculture - Specialized Growing Mediums for Different Crops">
                         </div>
                         <div class="product-content">
                             <h3>Soil Solutions</h3>
@@ -508,7 +527,7 @@
                     </div>
                 </div>
 
-                <!-- Affiliate Products Section -->
+                <!-- Affiliate Products Section - Temporarily Hidden
                 <div class="affiliate-products">
                     <h2>Recommended Gardening Tools</h2>
                     <div class="product-grid">
@@ -544,6 +563,7 @@
                         </div>
                     </div>
                 </div>
+                -->
             </div>
         </section>
 
@@ -581,6 +601,20 @@
                         </div>
                         <h3>Quality Assured</h3>
                         <p>Rigorous quality control ensures consistent product excellence</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Expert Support</h3>
+                        <p>Dedicated team of agricultural experts to guide you through your growing journey</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Global Standards</h3>
+                        <p>Our products meet international quality standards for agricultural excellence</p>
                     </div>
                 </div>
             </div>
@@ -690,6 +724,8 @@
                         <li><a href="products.html">Products</a></li>
                         <li><a href="usecases.html">Use Cases</a></li>
                         <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

@@ -9,15 +9,36 @@ Allow: /pagead/*/show_ads_impl.js
 Allow: /static/glade.js
 Allow: /static/glade/
 Allow: /tag/js/
-Disallow: /private/
-Disallow: /admin/
-Disallow: /temp/
-Disallow: /cgi-bin/
-Disallow: /includes/
-Disallow: /images/private/
-Noindex: /
+Allow: /index.html
+Allow: /about.html
+Allow: /products.html
+Allow: /usecases.html
+Allow: /contact.html
+Allow: /privacy-policy.html
+Allow: /terms.html
 
+# Product Pages
+Allow: /high-ec-cocopeat-blocks.html
+Allow: /high-ec-coco-husk-chip-blocks.html
+Allow: /high-ec-cocopeat-blocks-small.html
+Allow: /low-ec-cocopeat-blocks.html
+Allow: /low-ec-coco-husk-chip-blocks.html
+Allow: /low-ec-cocopeat-blocks-small.html
+Allow: /baby-coir-bales.html
+Allow: /cocopeat-grow-bags.html
+
+# Sitemap
 Sitemap: https://mayuracoirs.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10
+
+# Disallow admin and private directories
+Disallow: /admin/
+Disallow: /private/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /logs/
 
 # Crawl-delay: 10
 # Allow: /sitemap.xml
