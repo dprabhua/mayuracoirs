@@ -114,16 +114,16 @@ if (newsletterForm) {
     });
 }
 
-// Product Card Hover Effect
-document.querySelectorAll('.product-card').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.style.transform = 'translateY(-10px)';
-    });
+// // Product Card Hover Effect
+// document.querySelectorAll('.product-card').forEach(card => {
+//     card.addEventListener('mouseenter', () => {
+//         card.style.transform = 'translateY(-10px)';
+//     });
     
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'translateY(0)';
-    });
-});
+//     card.addEventListener('mouseleave', () => {
+//         card.style.transform = 'translateY(0)';
+//     });
+// });
 
 // Testimonial Slider
 let currentTestimonial = 0;
@@ -205,4 +205,24 @@ document.addEventListener('DOMContentLoaded', function() {
     images.forEach(img => {
         imageObserver.observe(img);
     });
+});
+
+// Dropdown Menu Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdown = document.querySelector('.dropdown');
+    
+    if (dropdownToggle) {
+        dropdownToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            dropdown.classList.toggle('active');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+    }
 }); 

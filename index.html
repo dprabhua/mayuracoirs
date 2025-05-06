@@ -19,7 +19,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
     
     <!-- Prefetch Critical Resources -->
     <link rel="prefetch" href="images/logo.png" as="image">
@@ -40,6 +39,19 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="manifest" href="manifest.json">
     <title>Mayuracoirs - Premium Coir Manufacturer in Salem | Cocopeat Blocks & Soil Solutions</title>
+
+    <!-- Privacy-friendly Analytics -->
+    <script>
+        // First-party analytics implementation
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX', {
+            'anonymize_ip': true,
+            'cookie_domain': 'mayuracoirs.com',
+            'cookie_flags': 'SameSite=None;Secure'
+        });
+    </script>
 
     <!-- Image Schema Markup -->
     <script type="application/ld+json">
@@ -290,6 +302,18 @@
             {
                 "@type": "ListItem",
                 "position": 4,
+                "name": "Blog",
+                "item": "https://mayuracoirs.com/blog.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "FAQ",
+                "item": "https://mayuracoirs.com/faq.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 6,
                 "name": "Contact",
                 "item": "https://mayuracoirs.com/contact.html"
             }
@@ -327,12 +351,77 @@
     }
     </script>
 
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Affiliate Marketing -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Mayuracoirs",
+        "url": "https://mayuracoirs.com",
+        "sameAs": [
+            "https://www.facebook.com/mayuracoirs",
+            "https://www.twitter.com/mayuracoirs",
+            "https://www.instagram.com/mayuracoirs",
+            "https://www.linkedin.com/company/mayuracoirs"
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Coir Products",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Product",
+                        "name": "Cocopeat Blocks",
+                        "description": "High-quality cocopeat blocks for superior water retention and aeration",
+                        "image": "https://mayuracoirs.com/images/cocopeat.jpg",
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "Contact for pricing",
+                            "priceCurrency": "INR",
+                            "availability": "https://schema.org/InStock",
+                            "seller": {
+                                "@type": "Organization",
+                                "name": "Mayuracoirs"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- Monetization and Analytics -->
+    <script>
+        // Privacy-friendly analytics
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX', {
+            'anonymize_ip': true,
+            'cookie_domain': 'mayuracoirs.com',
+            'cookie_flags': 'SameSite=None;Secure'
+        });
+
+        // Affiliate tracking (first-party only)
+        function trackAffiliateClick(affiliateId) {
+            gtag('event', 'affiliate_click', {
+                'event_category': 'affiliate',
+                'event_label': affiliateId,
+                'value': 1
+            });
+        }
+    </script>
+
+    <!-- Stylesheets -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7589320120088142" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="src/static/css/engagement.css">
 </head>
 <body>
+    <!-- Common Header -->
     <header class="header">
         <nav class="navbar">
             <div class="container">
@@ -345,25 +434,51 @@
                     <span></span>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="products.html">Products</a></li>
+                    <li class="dropdown">
+                        <a href="products.html" class="dropdown-toggle">Products</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu">
+                                <a href="high-ec-products.html">High EC Products</a>
+                                <ul class="dropdown-submenu-content">
+                                    <li><a href="high-ec-cocopeat-blocks.html">Cocopeat Blocks</a></li>
+                                    <li><a href="high-ec-coco-husk-chip-blocks.html">Coco Husk Chip Blocks</a></li>
+                                    <li><a href="high-ec-cocopeat-blocks-small.html">Cocopeat Blocks (Small)</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a href="low-ec-products.html">Low EC Products</a>
+                                <ul class="dropdown-submenu-content">
+                                    <li><a href="low-ec-cocopeat-blocks.html">Cocopeat Blocks</a></li>
+                                    <li><a href="low-ec-coco-husk-chip-blocks.html">Coco Husk Chip Blocks</a></li>
+                                    <li><a href="low-ec-cocopeat-blocks-small.html">Cocopeat Blocks (Small)</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="baby-coir-bales.html">Baby Coir in Bales</a></li>
+                            <li><a href="cocopeat-grow-bags.html">Cocopeat Grow Bags</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="manufacturing.html">Manufacturing</a></li>
+                    <li><a href="quality-process.html">Quality</a></li>
                     <li><a href="usecases.html">Use Cases</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero index-hero">
             <div class="hero-bg">
                 <img src="images/hero-bg.jpg" alt="Mayuracoirs Manufacturing Facility - Sustainable Coir Production Process" loading="lazy">
                 <div class="overlay"></div>
             </div>
             <div class="container">
                 <div class="hero-content">
-                    <h1>Welcome to Mayuracoirs</h1>
+                <h1>Welcome to Mayuracoirs</h1>
                     <p class="subtitle">Sustainable Coir Solutions for Agriculture and Horticulture</p>
                     <div class="hero-buttons">
                         <a href="#products" class="cta-button primary">Explore Our Products</a>
@@ -376,23 +491,23 @@
         <section id="products" class="products">
             <div class="container">
                 <div class="section-header">
-                    <h2>Our Products</h2>
+                <h2>Our Products</h2>
                     <p>High-quality, sustainable coir products for all your agricultural needs</p>
                 </div>
                 <div class="product-grid">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/placeholder.jpg" data-src="images/cocopeat.jpg" alt="Premium Cocopeat Blocks for Hydroponics - Natural Soil Amendment for Organic Gardening" loading="lazy">
+                            <img src="images/cocopeat.jpg" alt="Premium Cocopeat Blocks for Hydroponics - Natural Soil Amendment for Organic Gardening">
                         </div>
                         <div class="product-content">
-                            <h3>Cocopeat Blocks</h3>
+                        <h3>Cocopeat Blocks</h3>
                             <p>High-quality cocopeat blocks for superior water retention and aeration. Perfect for hydroponic systems, organic gardening, and soil conditioning. Our premium cocopeat is ideal for growing vegetables, flowers, and herbs in Tamil Nadu's climate. Features excellent moisture retention, natural pH balance, and sustainable sourcing.</p>
                             <a href="products.html#cocopeat" class="product-link">Learn More <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/placeholder.jpg" data-src="images/coir-pith.jpg" alt="Organic Coir Pith for Sustainable Agriculture - Natural Soil Conditioner for Organic Farming" loading="lazy">
+                            <img src="images/coir-pith.jpg" alt="Organic Coir Pith for Sustainable Agriculture - Natural Soil Conditioner for Organic Farming">
                         </div>
                         <div class="product-content">
                             <h3>Coir Pith</h3>
@@ -402,7 +517,7 @@
                     </div>
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/placeholder.jpg" data-src="images/soil-solutions.jpg" alt="Custom Soil Solutions for Agriculture - Specialized Growing Mediums for Different Crops" loading="lazy">
+                            <img src="images/soil-solutions.jpg" alt="Custom Soil Solutions for Agriculture - Specialized Growing Mediums for Different Crops">
                         </div>
                         <div class="product-content">
                             <h3>Soil Solutions</h3>
@@ -411,33 +526,71 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Affiliate Products Section - Temporarily Hidden
+                <div class="affiliate-products">
+                    <h2>Recommended Gardening Tools</h2>
+                    <div class="product-grid">
+                        <div class="product-card affiliate">
+                            <div class="product-image">
+                                <img src="https://m.media-amazon.com/images/I/71YHhZJq+EL._AC_UL320_.jpg" 
+                                     alt="Premium Gardening Tools Set" 
+                                     loading="lazy"
+                                     data-region="IN"
+                                     class="affiliate-image">
+                                <img src="https://m.media-amazon.com/images/I/71YHhZJq+EL._AC_UL320_.jpg" 
+                                     alt="Premium Gardening Tools Set" 
+                                     loading="lazy"
+                                     data-region="US"
+                                     class="affiliate-image">
+                            </div>
+                            <div class="product-content">
+                                <h3>Gardening Tools Set</h3>
+                                <p>Complete set of high-quality gardening tools perfect for working with our coir products.</p>
+                                <a href="https://amzn.to/your-affiliate-link-IN" 
+                                   onclick="trackAffiliateClick('gardening-tools-IN')" 
+                                   class="product-link affiliate-link-IN" 
+                                   rel="nofollow sponsored">
+                                    View on Amazon India <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://amzn.to/your-affiliate-link-US" 
+                                   onclick="trackAffiliateClick('gardening-tools-US')" 
+                                   class="product-link affiliate-link-US" 
+                                   rel="nofollow sponsored">
+                                    View on Amazon US <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                -->
             </div>
         </section>
 
         <section class="features">
             <div class="container">
                 <div class="section-header">
-                    <h2>Why Choose Mayuracoirs?</h2>
+                <h2>Why Choose Mayuracoirs?</h2>
                     <p>We're committed to providing the best sustainable solutions</p>
                 </div>
                 <div class="feature-grid">
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-leaf"></i>
+                        <i class="fas fa-leaf"></i>
                         </div>
                         <h3>Eco-Friendly</h3>
                         <p>100% natural and organic products that support sustainable agriculture</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-tint"></i>
+                        <i class="fas fa-tint"></i>
                         </div>
                         <h3>Water Retention</h3>
                         <p>Superior water-holding capacity reduces irrigation needs</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-recycle"></i>
+                        <i class="fas fa-recycle"></i>
                         </div>
                         <h3>Sustainable</h3>
                         <p>Made from renewable coconut husks, supporting circular economy</p>
@@ -449,6 +602,20 @@
                         <h3>Quality Assured</h3>
                         <p>Rigorous quality control ensures consistent product excellence</p>
                     </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Expert Support</h3>
+                        <p>Dedicated team of agricultural experts to guide you through your growing journey</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Global Standards</h3>
+                        <p>Our products meet international quality standards for agricultural excellence</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -456,13 +623,13 @@
         <section class="testimonials">
             <div class="container">
                 <div class="section-header">
-                    <h2>What Our Customers Say</h2>
+                <h2>What Our Customers Say</h2>
                     <p>Trusted by farmers and gardeners across India</p>
                 </div>
                 <div class="testimonial-slider">
                     <div class="testimonial">
                         <div class="testimonial-content">
-                            <p>"Mayuracoirs has transformed my gardening experience. The quality of their cocopeat blocks is unmatched!"</p>
+                        <p>"Mayuracoirs has transformed my gardening experience. The quality of their cocopeat blocks is unmatched!"</p>
                         </div>
                         <div class="testimonial-author">
                             <img src="images/customer1.jpg" alt="Customer" loading="lazy">
@@ -479,12 +646,56 @@
         <section class="cta">
             <div class="container">
                 <div class="cta-content">
-                    <h2>Ready to Grow with Mayuracoirs?</h2>
-                    <p>Discover the power of sustainable coir products for your agricultural needs.</p>
+                <h2>Ready to Grow with Mayuracoirs?</h2>
+                <p>Discover the power of sustainable coir products for your agricultural needs.</p>
                     <div class="cta-buttons">
                         <a href="contact.html" class="cta-button primary">Contact Us Today</a>
                         <a href="products.html" class="cta-button secondary">View Products</a>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section with Lead Magnet -->
+        <section class="newsletter-cta">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Get Your Free Gardening Guide</h2>
+                    <p>Subscribe to our newsletter and receive a free guide on "Sustainable Gardening with Coir Products"</p>
+                    <form class="newsletter-form" action="#" method="POST">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Get Free Guide</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section class="blog-preview">
+            <div class="container">
+                <h2>Latest from Our Blog</h2>
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <img src="images/blog1.jpg" alt="Sustainable Gardening Tips" loading="lazy">
+                        <div class="blog-content">
+                            <h3>5 Ways to Use Cocopeat for Sustainable Gardening</h3>
+                            <p>Learn how to maximize the benefits of cocopeat in your garden...</p>
+                            <a href="/blog/sustainable-gardening" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <!-- Add more blog posts -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof Section -->
+        <section class="social-proof">
+            <div class="container">
+                <h2>As Featured In</h2>
+                <div class="featured-logos">
+                    <img src="images/featured1.png" alt="Featured in Gardening Magazine" loading="lazy">
+                    <img src="images/featured2.png" alt="Featured in Agriculture Today" loading="lazy">
+                    <!-- Add more featured logos -->
                 </div>
             </div>
         </section>
@@ -513,6 +724,8 @@
                         <li><a href="products.html">Products</a></li>
                         <li><a href="usecases.html">Use Cases</a></li>
                         <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -543,5 +756,29 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Region-specific affiliate handling
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get user's region based on IP or browser settings
+            const userRegion = navigator.language.split('-')[1] || 'US';
+            
+            // Hide/show region-specific elements
+            document.querySelectorAll('.affiliate-image').forEach(img => {
+                if (img.dataset.region === userRegion) {
+                    img.style.display = 'block';
+                } else {
+                    img.style.display = 'none';
+                }
+            });
+
+            document.querySelectorAll('.affiliate-link-IN, .affiliate-link-US').forEach(link => {
+                if (link.classList.contains(`affiliate-link-${userRegion}`)) {
+                    link.style.display = 'inline-flex';
+                } else {
+                    link.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
