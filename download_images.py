@@ -41,10 +41,10 @@ def main():
         'teama.jpg': 'https://picsum.photos/seed/team3/400/400',
         
         # Other images
-        'customer1.jpg': 'https://picsum.photos/seed/customer/600/400',
+        'customer1.jpg': 'https://picsum.photos/seed/customer/400/300',
         'factory.jpg': 'https://picsum.photos/seed/factory/800/600',
-        'logo.png': 'https://picsum.photos/seed/logo/300/100',
-        'hero-bg.jpg': 'https://picsum.photos/seed/hero/1920/1080',
+        'logo.png': 'https://picsum.photos/seed/logo/150/50',
+        'hero-bg.jpg': 'https://picsum.photos/seed/hero/1280/720',
         'placeholder.jpg': 'https://picsum.photos/seed/placeholder/400/300'
     }
 

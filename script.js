@@ -225,4 +225,75 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+});
+
+// Analytics Helper Functions
+const analytics = {
+    init: function() {
+        // Track search engine referrals
+        const referrer = document.referrer;
+        if (referrer) {
+            const searchEngines = {
+                'google': 'Google',
+                'bing': 'Bing',
+                'yahoo': 'Yahoo',
+                'duckduckgo': 'DuckDuckGo',
+                'baidu': 'Baidu',
+                'yandex': 'Yandex'
+            };
+
+            for (const [domain, name] of Object.entries(searchEngines)) {
+                if (referrer.toLowerCase().includes(domain)) {
+                    gtag('event', 'search_engine_referral', {
+                        'search_engine': name,
+                        'referrer': referrer,
+                        'page_path': window.location.pathname
+                    });
+                    break;
+                }
+            }
+        }
+
+        // Track user location (country level only, respecting privacy)
+        if (navigator.language) {
+            gtag('event', 'user_location', {
+                'language': navigator.language,
+                'page_path': window.location.pathname
+            });
+        }
+
+        // Track device and browser information
+        gtag('event', 'device_info', {
+            'device_type': this.getDeviceType(),
+            'browser': this.getBrowserInfo(),
+            'page_path': window.location.pathname
+        });
+    },
+
+    getDeviceType: function() {
+        const ua = navigator.userAgent;
+        if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+            return 'tablet';
+        }
+        if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
+            return 'mobile';
+        }
+        return 'desktop';
+    },
+
+    getBrowserInfo: function() {
+        const ua = navigator.userAgent;
+        let browser = 'Unknown';
+        if (ua.includes('Firefox')) browser = 'Firefox';
+        else if (ua.includes('Chrome')) browser = 'Chrome';
+        else if (ua.includes('Safari')) browser = 'Safari';
+        else if (ua.includes('Edge')) browser = 'Edge';
+        else if (ua.includes('MSIE') || ua.includes('Trident/')) browser = 'Internet Explorer';
+        return browser;
+    }
+};
+
+// Initialize analytics when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    analytics.init();
 }); 

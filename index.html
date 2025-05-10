@@ -23,12 +23,15 @@
     <!-- Prefetch Critical Resources -->
     <link rel="prefetch" href="images/logo.png" as="image">
     <link rel="prefetch" href="images/hero-bg.jpg" as="image">
-    <link rel="prefetch" href="styles.css" as="style">
+    <link rel="prefetch" href="styles.min.css" as="style">
     <link rel="prefetch" href="script.js" as="script">
     
     <!-- Preload Critical Resources -->
+    <link rel="preload" href="images/hero-bg.jpg" as="image" type="image/jpeg">
+    <link rel="preload" href="images/logo.png" as="image" type="image/png">
+    <link rel="preload" href="styles.min.css" as="style">
+    <link rel="preload" href="script.js" as="script">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style">
     
     <!-- Canonical and Alternate Language Tags -->
     <link rel="canonical" href="https://mayuracoirs.com/">
@@ -41,15 +44,77 @@
     <title>Mayuracoirs - Premium Coir Manufacturer in Salem | Cocopeat Blocks & Soil Solutions</title>
 
     <!-- Privacy-friendly Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5DVD1HN65P"></script>
     <script>
-        // First-party analytics implementation
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX', {
+        
+        // Configure Google Analytics with enhanced settings
+        gtag('config', 'G-5DVD1HN65P', {
             'anonymize_ip': true,
             'cookie_domain': 'mayuracoirs.com',
-            'cookie_flags': 'SameSite=None;Secure'
+            'cookie_flags': 'SameSite=None;Secure',
+            'send_page_view': true,
+            'allow_google_signals': true,
+            'allow_ad_personalization_signals': true,
+            'link_attribution': true,
+            'content_group1': 'Homepage'
+        });
+
+        // Track page views with additional parameters
+        gtag('event', 'page_view', {
+            'page_title': document.title,
+            'page_location': window.location.href,
+            'page_path': window.location.pathname,
+            'send_to': 'G-5DVD1HN65P'
+        });
+
+        // Track user engagement
+        document.addEventListener('DOMContentLoaded', function() {
+            // Track scroll depth
+            let scrollDepth = 0;
+            window.addEventListener('scroll', function() {
+                const winHeight = window.innerHeight;
+                const docHeight = document.documentElement.scrollHeight;
+                const scrollTop = window.scrollY;
+                const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+                
+                if (scrollPercent > scrollDepth) {
+                    scrollDepth = Math.floor(scrollPercent / 25) * 25;
+                    if (scrollDepth <= 100) {
+                        gtag('event', 'scroll_depth', {
+                            'depth': scrollDepth + '%',
+                            'page_path': window.location.pathname
+                        });
+                    }
+                }
+            });
+
+            // Track time on page
+            let startTime = Date.now();
+            setInterval(function() {
+                const timeSpent = Math.floor((Date.now() - startTime) / 1000);
+                if (timeSpent % 30 === 0) { // Track every 30 seconds
+                    gtag('event', 'time_on_page', {
+                        'time_spent': timeSpent,
+                        'page_path': window.location.pathname
+                    });
+                }
+            }, 1000);
+
+            // Track outbound links
+            document.querySelectorAll('a[href^="http"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (!this.href.includes('mayuracoirs.com')) {
+                        gtag('event', 'outbound_link_click', {
+                            'link_url': this.href,
+                            'link_text': this.textContent,
+                            'page_path': window.location.pathname
+                        });
+                    }
+                });
+            });
         });
     </script>
 
@@ -398,7 +463,7 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX', {
+        gtag('config', 'G-5DVD1HN65P', {
             'anonymize_ip': true,
             'cookie_domain': 'mayuracoirs.com',
             'cookie_flags': 'SameSite=None;Secure'
@@ -416,9 +481,8 @@
 
     <!-- Stylesheets -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="src/static/css/engagement.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.min.css">
 </head>
 <body>
     <!-- Common Header -->
@@ -426,7 +490,10 @@
         <nav class="navbar">
             <div class="container">
                 <a href="index.html" class="logo">
-                    <img src="images/logo.png" alt="Mayuracoirs Logo - Premium Coir Manufacturer in Salem" width="150" height="50">
+                    <picture>
+                        <source srcset="images/webp/logo.webp" type="image/webp">
+                        <img src="images/logo.png" alt="Mayuracoirs Logo - Premium Coir Manufacturer in Salem" width="150" height="50" loading="lazy">
+                    </picture>
                 </a>
                 <div class="nav-toggle">
                     <span></span>
@@ -473,12 +540,15 @@
     <main>
         <section class="hero index-hero">
             <div class="hero-bg">
-                <img src="images/hero-bg.jpg" alt="Mayuracoirs Manufacturing Facility - Sustainable Coir Production Process" loading="lazy">
+                <picture>
+                    <source srcset="images/webp/hero-bg.webp" type="image/webp">
+                    <img src="images/hero-bg.jpg" alt="Mayuracoirs Manufacturing Facility - Sustainable Coir Production Process" width="1280" height="720" fetchpriority="high">
+                </picture>
                 <div class="overlay"></div>
             </div>
             <div class="container">
                 <div class="hero-content">
-                <h1>Welcome to Mayuracoirs</h1>
+                    <h1>Welcome to Mayuracoirs</h1>
                     <p class="subtitle">Sustainable Coir Solutions for Agriculture and Horticulture</p>
                     <div class="hero-buttons">
                         <a href="#products" class="cta-button primary">Explore Our Products</a>
@@ -497,32 +567,41 @@
                 <div class="product-grid">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/cocopeat.jpg" alt="Premium Cocopeat Blocks for Hydroponics - Natural Soil Amendment for Organic Gardening">
+                            <picture>
+                                <source srcset="images/webp/cocopeat.webp" type="image/webp">
+                                <img src="images/cocopeat.jpg" alt="Cocopeat Product" width="800" height="600" loading="lazy">
+                            </picture>
                         </div>
                         <div class="product-content">
                         <h3>Cocopeat Blocks</h3>
                             <p>High-quality cocopeat blocks for superior water retention and aeration. Perfect for hydroponic systems, organic gardening, and soil conditioning. Our premium cocopeat is ideal for growing vegetables, flowers, and herbs in Tamil Nadu's climate. Features excellent moisture retention, natural pH balance, and sustainable sourcing.</p>
-                            <a href="products.html#cocopeat" class="product-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                            <a href="products.html#cocopeat" class="btn">View Cocopeat Block Specifications <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/coir-pith.jpg" alt="Organic Coir Pith for Sustainable Agriculture - Natural Soil Conditioner for Organic Farming">
+                            <picture>
+                                <source srcset="images/webp/coir-pith.webp" type="image/webp">
+                                <img src="images/coir-pith.jpg" alt="Coir Pith Product" width="800" height="600" loading="lazy">
+                            </picture>
                         </div>
                         <div class="product-content">
                             <h3>Coir Pith</h3>
                             <p>Premium coir pith for soil amendment and potting mixes. Enhances soil structure, improves water retention, and promotes healthy root development. Perfect for organic farming, landscaping, and sustainable agriculture practices. Our coir pith is processed to ensure consistent quality and optimal performance in various soil conditions.</p>
-                            <a href="products.html#coir-pith" class="product-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                            <a href="products.html#coir-pith" class="product-link">Explore Coir Pith Products <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/soil-solutions.jpg" alt="Custom Soil Solutions for Agriculture - Specialized Growing Mediums for Different Crops">
+                            <picture>
+                                <source srcset="images/webp/soil-solutions.webp" type="image/webp">
+                                <img src="images/soil-solutions.jpg" alt="Soil Solutions Product" width="800" height="600" loading="lazy">
+                            </picture>
                         </div>
                         <div class="product-content">
                             <h3>Soil Solutions</h3>
                             <p>Specialized soil solutions for various agricultural applications. Custom blends available for specific crops like tomatoes, chillies, and flowers. Our soil solutions combine cocopeat, coir pith, and organic amendments to create the perfect growing medium for optimal plant growth and yield in Tamil Nadu's agricultural conditions.</p>
-                            <a href="products.html#soil-solutions" class="product-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                            <a href="products.html#soil-solutions" class="product-link">Discover Soil Solutions <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -567,49 +646,49 @@
             </div>
         </section>
 
-        <section class="features">
+        <section class="product-features">
             <div class="container">
                 <div class="section-header">
-                <h2>Why Choose Mayuracoirs?</h2>
+                    <h2>Why Choose Mayuracoirs?</h2>
                     <p>We're committed to providing the best sustainable solutions</p>
                 </div>
-                <div class="feature-grid">
-                    <div class="feature-card">
+                <div class="features-grid">
+                    <div class="feature-card animate">
                         <div class="feature-icon">
-                        <i class="fas fa-leaf"></i>
+                            <i class="fas fa-leaf"></i>
                         </div>
                         <h3>Eco-Friendly</h3>
                         <p>100% natural and organic products that support sustainable agriculture</p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card animate">
                         <div class="feature-icon">
-                        <i class="fas fa-tint"></i>
+                            <i class="fas fa-tint"></i>
                         </div>
                         <h3>Water Retention</h3>
                         <p>Superior water-holding capacity reduces irrigation needs</p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card animate">
                         <div class="feature-icon">
-                        <i class="fas fa-recycle"></i>
+                            <i class="fas fa-recycle"></i>
                         </div>
                         <h3>Sustainable</h3>
                         <p>Made from renewable coconut husks, supporting circular economy</p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card animate">
                         <div class="feature-icon">
                             <i class="fas fa-award"></i>
                         </div>
                         <h3>Quality Assured</h3>
                         <p>Rigorous quality control ensures consistent product excellence</p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card animate">
                         <div class="feature-icon">
                             <i class="fas fa-headset"></i>
                         </div>
                         <h3>Expert Support</h3>
                         <p>Dedicated team of agricultural experts to guide you through your growing journey</p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card animate">
                         <div class="feature-icon">
                             <i class="fas fa-globe"></i>
                         </div>
@@ -632,7 +711,10 @@
                         <p>"Mayuracoirs has transformed my gardening experience. The quality of their cocopeat blocks is unmatched!"</p>
                         </div>
                         <div class="testimonial-author">
-                            <img src="images/customer1.jpg" alt="Customer" loading="lazy">
+                            <picture>
+                                <source srcset="images/webp/customer1.webp" type="image/webp">
+                                <img src="images/customer1.jpg" alt="Customer Testimonial" width="400" height="300" loading="lazy">
+                            </picture>
                             <div class="author-info">
                                 <h4>Rajesh Kumar</h4>
                                 <p>Organic Farmer, Tamil Nadu</p>
@@ -706,7 +788,10 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="images/logo.png" alt="Mayuracoirs Logo" width="150" height="50">
+                        <picture>
+                            <source srcset="images/webp/logo.webp" type="image/webp">
+                            <img src="images/logo.png" alt="Mayuracoirs Logo" width="150" height="50" loading="lazy">
+                        </picture>
                     </div>
                     <p class="footer-description">Leading manufacturer of sustainable coir products in India, committed to eco-friendly agricultural solutions.</p>
                     <div class="social-icons">
