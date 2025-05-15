@@ -161,51 +161,82 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Image Loading Strategy
+// Lazy Loading Images
 document.addEventListener('DOMContentLoaded', function() {
-    // Function to load an image
-    function loadImage(img) {
-        if (img.dataset.src) {
-            const src = img.dataset.src;
-            const tempImg = new Image();
-            
-            tempImg.onload = function() {
-                img.src = src;
-                img.classList.add('loaded');
-            };
-            
-            tempImg.onerror = function() {
-                console.error('Failed to load image:', src);
-                img.src = 'images/placeholder.jpg'; // Fallback image
-            };
-            
-            tempImg.src = src;
-        }
-    }
+    const lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
 
-    // Load all images immediately
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    images.forEach(loadImage);
-
-    // Intersection Observer for images that enter viewport
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                loadImage(img);
-                observer.unobserve(img);
-            }
+    if ('IntersectionObserver' in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    let lazyImage = entry.target;
+                    lazyImage.src = lazyImage.dataset.src;
+                    if (lazyImage.dataset.srcset) {
+                        lazyImage.srcset = lazyImage.dataset.srcset;
+                    }
+                    lazyImage.classList.remove('lazy');
+                    lazyImageObserver.unobserve(lazyImage);
+                }
+            });
         });
-    }, {
-        rootMargin: '50px 0px',
-        threshold: 0.01
-    });
 
-    // Observe all lazy-loaded images
-    images.forEach(img => {
-        imageObserver.observe(img);
-    });
+        lazyImages.forEach(function(lazyImage) {
+            lazyImageObserver.observe(lazyImage);
+        });
+    } else {
+        // Fallback for browsers that don't support IntersectionObserver
+        let active = false;
+
+        const lazyLoad = function() {
+            if (active === false) {
+                active = true;
+
+                setTimeout(function() {
+                    lazyImages.forEach(function(lazyImage) {
+                        if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== 'none') {
+                            lazyImage.src = lazyImage.dataset.src;
+                            if (lazyImage.dataset.srcset) {
+                                lazyImage.srcset = lazyImage.dataset.srcset;
+                            }
+                            lazyImage.classList.remove('lazy');
+
+                            lazyImages = lazyImages.filter(function(image) {
+                                return image !== lazyImage;
+                            });
+
+                            if (lazyImages.length === 0) {
+                                document.removeEventListener('scroll', lazyLoad);
+                                window.removeEventListener('resize', lazyLoad);
+                                window.removeEventListener('orientationchange', lazyLoad);
+                            }
+                        }
+                    });
+
+                    active = false;
+                }, 200);
+            }
+        };
+
+        document.addEventListener('scroll', lazyLoad);
+        window.addEventListener('resize', lazyLoad);
+        window.addEventListener('orientationchange', lazyLoad);
+    }
 });
+
+// Defer non-critical JavaScript
+function loadDeferredStyles() {
+    const addStylesNode = document.getElementById('deferred-styles');
+    const replacement = document.createElement('div');
+    replacement.innerHTML = addStylesNode.textContent;
+    document.body.appendChild(replacement);
+    addStylesNode.parentElement.removeChild(addStylesNode);
+}
+
+// Load deferred styles
+const raf = window.requestAnimationFrame || mozRequestAnimationFrame ||
+    webkitRequestAnimationFrame || msRequestAnimationFrame;
+if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+else window.addEventListener('load', loadDeferredStyles);
 
 // Dropdown Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {

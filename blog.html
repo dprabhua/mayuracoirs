@@ -23,7 +23,7 @@
     
     <!-- Prefetch Critical Resources -->
     <link rel="prefetch" href="images/logo.png" as="image">
-    <link rel="prefetch" href="images/blog-header.jpg" as="image">
+    <link rel="prefetch" href="images/eco-friendly-logo.png" as="image">
     <link rel="prefetch" href="styles.css" as="style">
     <link rel="prefetch" href="script.js" as="script">
     
@@ -136,6 +136,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <noscript id="deferred-styles">
+        <link rel="stylesheet" href="styles.css">
+    </noscript>
 </head>
 <body>
     <!-- Common Header -->
@@ -210,7 +213,7 @@
                 </div>
             </div>
 
-            <div class="blog-grid">
+            <div class="blog-grid" id="blogFeed">
                 <div class="blog-loader">
                     <div class="spinner"></div>
                     <p>Loading blog posts...</p>
@@ -300,5 +303,133 @@
     <!-- Scripts -->
     <script src="script.js"></script>
     <script src="src/js/blog.js"></script>
+    <script>
+        // RSS Feed Configuration
+        const RSS_FEED_URL = 'https://mayura-coirs-blog.blogspot.com/feeds/posts/default?alt=rss';
+        const POSTS_PER_PAGE = 6;
+        let currentPage = 1;
+        let allPosts = [];
+        const fallbackImage = 'images/placeholder.jpg';
+
+        // Fetch and parse RSS feed
+        async function fetchBlogPosts() {
+            try {
+                const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_FEED_URL)}`);
+                const data = await response.json();
+                
+                if (data.status === 'ok') {
+                    allPosts = data.items;
+                    displayPosts(currentPage);
+                    updatePagination();
+                }
+            } catch (error) {
+                console.error('Error fetching blog posts:', error);
+                document.getElementById('blogFeed').innerHTML = `
+                    <div class="error-message">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <p>Unable to load blog posts. Please try again later.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Display posts for current page
+        function displayPosts(page) {
+            const startIndex = (page - 1) * POSTS_PER_PAGE;
+            const endIndex = startIndex + POSTS_PER_PAGE;
+            const postsToShow = allPosts.slice(startIndex, endIndex);
+
+            const blogFeed = document.getElementById('blogFeed');
+            blogFeed.innerHTML = postsToShow.map(post => `
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="${post.thumbnail || fallbackImage}" 
+                             alt="${post.title}"
+                             loading="lazy"
+                             width="400"
+                             height="250">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="date">${new Date(post.pubDate).toLocaleDateString()}</span>
+                            <span class="category">${post.categories?.[0] || 'General'}</span>
+                        </div>
+                        <h3 class="blog-title">
+                            <a href="${post.link}" target="_blank" rel="noopener noreferrer">
+                                ${post.title}
+                            </a>
+                        </h3>
+                        <p class="blog-excerpt">${post.description.replace(/<[^>]*>/g, '').substring(0, 150)}...</p>
+                        <a href="${post.link}" class="read-more" target="_blank" rel="noopener noreferrer">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        // Update pagination
+        function updatePagination() {
+            const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
+            document.querySelector('.total-pages').textContent = `of ${totalPages}`;
+            document.querySelector('.prev-page').disabled = currentPage === 1;
+            document.querySelector('.next-page').disabled = currentPage === totalPages;
+        }
+
+        // Event listeners for pagination
+        document.querySelector('.prev-page').addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                displayPosts(currentPage);
+                updatePagination();
+            }
+        });
+
+        document.querySelector('.next-page').addEventListener('click', () => {
+            const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
+            if (currentPage < totalPages) {
+                currentPage++;
+                displayPosts(currentPage);
+                updatePagination();
+            }
+        });
+
+        // Search functionality
+        document.getElementById('blogSearch').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const filteredPosts = allPosts.filter(post => 
+                post.title.toLowerCase().includes(searchTerm) || 
+                post.description.toLowerCase().includes(searchTerm)
+            );
+            allPosts = filteredPosts;
+            currentPage = 1;
+            displayPosts(currentPage);
+            updatePagination();
+        });
+
+        // Category filter
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const category = btn.dataset.category;
+                
+                if (category === 'all') {
+                    fetchBlogPosts();
+                } else {
+                    const filteredPosts = allPosts.filter(post => 
+                        post.categories?.some(cat => cat.toLowerCase() === category.toLowerCase())
+                    );
+                    allPosts = filteredPosts;
+                    currentPage = 1;
+                    displayPosts(currentPage);
+                    updatePagination();
+                }
+            });
+        });
+
+        // Initialize
+        fetchBlogPosts();
+    </script>
 </body>
 </html> 

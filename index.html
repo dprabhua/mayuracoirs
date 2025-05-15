@@ -15,20 +15,17 @@
     <meta name="description" content="India's leading coir manufacturer in Salem, Tamil Nadu. Premium cocopeat blocks, soil solutions & gardening products. 100% natural, sustainable & eco-friendly. Free shipping available. Best prices for bulk orders of coir pith, cocopeat, and soil amendments.">
     <meta name="keywords" content="coir manufacturer Salem, cocopeat blocks India, organic soil amendment, sustainable gardening products, coir pith supplier, natural growing medium, hydroponic cocopeat, soil conditioner Tamil Nadu, eco-friendly gardening, bulk coir products">
     
-    <!-- Resource Hints -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Resource Hints with DNS Prefetch -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    
-    <!-- Prefetch Critical Resources -->
-    <link rel="prefetch" href="images/logo.png" as="image">
-    <link rel="prefetch" href="images/hero-bg.jpg" as="image">
-    <link rel="prefetch" href="styles.min.css" as="style">
-    <link rel="prefetch" href="script.js" as="script">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     
     <!-- Preload Critical Resources -->
-    <link rel="preload" href="images/hero-bg.jpg" as="image" type="image/jpeg">
-    <link rel="preload" href="images/logo.png" as="image" type="image/png">
+    <link rel="preload" href="images/hero-bg.webp" as="image" type="image/webp">
+    <link rel="preload" href="images/logo.webp" as="image" type="image/webp">
     <link rel="preload" href="styles.min.css" as="style">
     <link rel="preload" href="script.js" as="script">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style">
@@ -39,82 +36,51 @@
     <link rel="alternate" hreflang="ta" href="https://mayuracoirs.com/ta/">
     <link rel="alternate" hreflang="x-default" href="https://mayuracoirs.com/">
     
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="manifest" href="manifest.json">
+    
     <title>Mayuracoirs - Premium Coir Manufacturer in Salem | Cocopeat Blocks & Soil Solutions</title>
 
-    <!-- Privacy-friendly Analytics -->
+    <!-- Critical CSS -->
+    <style>
+        /* Add critical CSS here */
+        :root {
+            --primary-color: #2e7d32;
+            --secondary-color: #4caf50;
+            --text-color: #333;
+            --background-color: #fff;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+        
+        /* Add more critical CSS as needed */
+    </style>
+
+    <!-- Deferred CSS Loading -->
+    <link rel="stylesheet" href="styles.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="styles.min.css"></noscript>
+
+    <!-- Privacy-friendly Analytics with Deferred Loading -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-K722MX11X0"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        
-        // Configure Google Analytics with enhanced settings
         gtag('config', 'G-K722MX11X0', {
             'anonymize_ip': true,
             'cookie_domain': 'mayuracoirs.com',
             'cookie_flags': 'SameSite=None;Secure',
-            'send_page_view': true,
-            'allow_google_signals': true,
-            'allow_ad_personalization_signals': true,
-            'link_attribution': true,
-            'content_group1': 'Homepage'
-        });
-
-        // Track page views with additional parameters
-        gtag('event', 'page_view', {
-            'page_title': document.title,
-            'page_location': window.location.href,
-            'page_path': window.location.pathname,
-            'send_to': 'G-K722MX11X0'
-        });
-
-        // Track user engagement
-        document.addEventListener('DOMContentLoaded', function() {
-            // Track scroll depth
-            let scrollDepth = 0;
-            window.addEventListener('scroll', function() {
-                const winHeight = window.innerHeight;
-                const docHeight = document.documentElement.scrollHeight;
-                const scrollTop = window.scrollY;
-                const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
-                
-                if (scrollPercent > scrollDepth) {
-                    scrollDepth = Math.floor(scrollPercent / 25) * 25;
-                    if (scrollDepth <= 100) {
-                        gtag('event', 'scroll_depth', {
-                            'depth': scrollDepth + '%',
-                            'page_path': window.location.pathname
-                        });
-                    }
-                }
-            });
-
-            // Track time on page
-            let startTime = Date.now();
-            setInterval(function() {
-                const timeSpent = Math.floor((Date.now() - startTime) / 1000);
-                if (timeSpent % 30 === 0) { // Track every 30 seconds
-                    gtag('event', 'time_on_page', {
-                        'time_spent': timeSpent,
-                        'page_path': window.location.pathname
-                    });
-                }
-            }, 1000);
-
-            // Track outbound links
-            document.querySelectorAll('a[href^="http"]').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    if (!this.href.includes('mayuracoirs.com')) {
-                        gtag('event', 'outbound_link_click', {
-                            'link_url': this.href,
-                            'link_text': this.textContent,
-                            'page_path': window.location.pathname
-                        });
-                    }
-                });
-            });
+            'send_page_view': true
         });
     </script>
 
@@ -319,8 +285,6 @@
                         "description": "High-quality cocopeat blocks for superior water retention and aeration",
                         "image": "https://mayuracoirs.com/images/cocopeat.jpg"
                     },
-                    "price": "Contact for pricing",
-                    "priceCurrency": "INR",
                     "availability": "https://schema.org/InStock"
                 },
                 {
@@ -331,8 +295,6 @@
                         "description": "Premium coir pith for soil amendment and potting mixes",
                         "image": "https://mayuracoirs.com/images/coir-pith.jpg"
                     },
-                    "price": "Contact for pricing",
-                    "priceCurrency": "INR",
                     "availability": "https://schema.org/InStock"
                 }
             ]
@@ -402,6 +364,7 @@
             "@type": "Offer",
             "url": "https://mayuracoirs.com/products.html#cocopeat",
             "priceCurrency": "INR",
+            "price": "550",
             "availability": "https://schema.org/InStock",
             "seller": {
                 "@type": "Organization",
@@ -412,7 +375,23 @@
             "@type": "AggregateRating",
             "ratingValue": "4.8",
             "reviewCount": "150"
-        }
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "author": {
+                    "@type": "Person",
+                    "name": "Suresh P."
+                },
+                "datePublished": "2024-03-10",
+                "reviewBody": "Great product for my terrace garden. Highly recommend!",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                }
+            }
+        ]
     }
     </script>
 
@@ -442,8 +421,6 @@
                         "image": "https://mayuracoirs.com/images/cocopeat.jpg",
                         "offers": {
                             "@type": "Offer",
-                            "price": "Contact for pricing",
-                            "priceCurrency": "INR",
                             "availability": "https://schema.org/InStock",
                             "seller": {
                                 "@type": "Organization",
@@ -762,7 +739,7 @@
                         <div class="blog-content">
                             <h3>5 Ways to Use Cocopeat for Sustainable Gardening</h3>
                             <p>Learn how to maximize the benefits of cocopeat in your garden...</p>
-                            <a href="/blog/sustainable-gardening" class="read-more">Read More</a>
+                            <a href="blog.html" class="read-more">Read More</a>
                         </div>
                     </article>
                     <!-- Add more blog posts -->
