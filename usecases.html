@@ -49,7 +49,13 @@
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="about.html" class="dropdown-toggle">About Us</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html">Our Story</a></li>
+                            <li><a href="environmental-responsibility.html">Environmental Responsibility</a></li>
+                        </ul>
+                    </li>
                     <li class="dropdown">
                         <a href="products.html" class="dropdown-toggle">Products</a>
                         <ul class="dropdown-menu">
@@ -91,9 +97,9 @@
         </div>
     </section>
 
-    <section id="hydroponics" class="use-case-detail">
-        <div class="container">
-            <div class="use-case-grid">
+    <main class="container">
+        <section class="use-cases-grid">
+            <article class="use-case-card" id="hydroponics">
                 <div class="use-case-image">
                     <img src="images/hydroponics.jpg" 
                          alt="Hydroponics Application" 
@@ -101,13 +107,13 @@
                          width="600"
                          height="400">
                 </div>
-                <div class="use-case-info">
+                <div class="use-case-content">
                     <h2>Hydroponics</h2>
                     <p class="use-case-description">Our coir products are ideal for hydroponic systems, providing excellent water retention and aeration for optimal plant growth without soil.</p>
                     
                     <div class="use-case-benefits">
                         <h3>Benefits</h3>
-                        <ul>
+                        <ul class="feature-list">
                             <li><i class="fas fa-check"></i> Superior water retention and drainage</li>
                             <li><i class="fas fa-check"></i> Optimal root aeration</li>
                             <li><i class="fas fa-check"></i> pH neutral and sterile medium</li>
@@ -118,7 +124,7 @@
 
                     <div class="use-case-applications">
                         <h3>Applications</h3>
-                        <ul>
+                        <ul class="application-list">
                             <li><i class="fas fa-leaf"></i> Commercial hydroponic farming</li>
                             <li><i class="fas fa-home"></i> Home hydroponic systems</li>
                             <li><i class="fas fa-seedling"></i> Seed starting and propagation</li>
@@ -126,15 +132,11 @@
                         </ul>
                     </div>
 
-                    <a href="contact.html" class="product-link">Get Expert Advice</a>
+                    <a href="contact.html" class="btn-primary">Get Expert Advice</a>
                 </div>
-            </div>
-        </div>
-    </section>
+            </article>
 
-    <section id="soil-amendment" class="use-case-detail">
-        <div class="container">
-            <div class="use-case-grid reverse">
+            <article class="use-case-card" id="soil-amendment">
                 <div class="use-case-image">
                     <img src="images/soil-amendment.jpg" 
                          alt="Soil Amendment Application" 
@@ -142,13 +144,13 @@
                          width="600"
                          height="400">
                 </div>
-                <div class="use-case-info">
+                <div class="use-case-content">
                     <h2>Soil Amendment</h2>
                     <p class="use-case-description">Transform your soil with our coir products, improving structure, water retention, and nutrient availability for healthier plants.</p>
                     
                     <div class="use-case-benefits">
                         <h3>Benefits</h3>
-                        <ul>
+                        <ul class="feature-list">
                             <li><i class="fas fa-check"></i> Improves soil structure and porosity</li>
                             <li><i class="fas fa-check"></i> Enhances water retention in sandy soils</li>
                             <li><i class="fas fa-check"></i> Increases nutrient holding capacity</li>
@@ -159,7 +161,7 @@
 
                     <div class="use-case-applications">
                         <h3>Applications</h3>
-                        <ul>
+                        <ul class="application-list">
                             <li><i class="fas fa-tractor"></i> Field crop production</li>
                             <li><i class="fas fa-tree"></i> Orchard and vineyard management</li>
                             <li><i class="fas fa-seedling"></i> Garden and landscape improvement</li>
@@ -167,15 +169,11 @@
                         </ul>
                     </div>
 
-                    <a href="contact.html" class="product-link">Get Expert Advice</a>
+                    <a href="contact.html" class="btn-primary">Get Expert Advice</a>
                 </div>
-            </div>
-        </div>
-    </section>
+            </article>
 
-    <section id="landscaping" class="use-case-detail">
-        <div class="container">
-            <div class="use-case-grid">
+            <article class="use-case-card" id="landscaping">
                 <div class="use-case-image">
                     <img src="images/landscaping.jpg" 
                          alt="Landscaping Application" 
@@ -183,13 +181,13 @@
                          width="600"
                          height="400">
                 </div>
-                <div class="use-case-info">
+                <div class="use-case-content">
                     <h2>Landscaping</h2>
                     <p class="use-case-description">Create beautiful, sustainable landscapes with our coir products, perfect for erosion control, mulching, and decorative applications.</p>
                     
                     <div class="use-case-benefits">
                         <h3>Benefits</h3>
-                        <ul>
+                        <ul class="feature-list">
                             <li><i class="fas fa-check"></i> Natural and eco-friendly</li>
                             <li><i class="fas fa-check"></i> Excellent erosion control</li>
                             <li><i class="fas fa-check"></i> Weed suppression</li>
@@ -200,7 +198,7 @@
 
                     <div class="use-case-applications">
                         <h3>Applications</h3>
-                        <ul>
+                        <ul class="application-list">
                             <li><i class="fas fa-mountain"></i> Slope stabilization</li>
                             <li><i class="fas fa-park"></i> Garden beds and borders</li>
                             <li><i class="fas fa-road"></i> Roadside landscaping</li>
@@ -208,24 +206,22 @@
                         </ul>
                     </div>
 
-                    <a href="contact.html" class="product-link">Get Expert Advice</a>
+                    <a href="contact.html" class="btn-primary">Get Expert Advice</a>
                 </div>
-            </div>
-        </div>
-    </section>
+            </article>
+        </section>
 
-    <section class="cta">
-        <div class="container">
-            <div class="cta-content">
+        <section class="cta-section">
+            <div class="cta-card">
                 <h2>Need Custom Solutions?</h2>
                 <p>Contact us for tailored coir product applications for your specific needs.</p>
                 <div class="cta-buttons">
-                    <a href="contact.html" class="cta-button primary">Contact Us</a>
-                    <a href="products.html" class="cta-button secondary">View Products</a>
+                    <a href="contact.html" class="btn-primary">Contact Us</a>
+                    <a href="products.html" class="btn-secondary">View Products</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="container">
@@ -282,5 +278,176 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <style>
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .use-case-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .use-case-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .use-case-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .use-case-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .use-case-card:hover .use-case-image img {
+            transform: scale(1.05);
+        }
+
+        .use-case-content {
+            padding: 1.5rem;
+        }
+
+        .use-case-content h2 {
+            color: #2e7d32;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .use-case-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .use-case-benefits,
+        .use-case-applications {
+            margin-bottom: 1.5rem;
+        }
+
+        .use-case-benefits h3,
+        .use-case-applications h3 {
+            color: #2e7d32;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-list,
+        .application-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li,
+        .application-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            color: #444;
+        }
+
+        .feature-list li i,
+        .application-list li i {
+            color: #2e7d32;
+            margin-right: 0.8rem;
+            width: 20px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #2e7d32;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background 0.3s ease;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .btn-primary:hover {
+            background: #1b5e20;
+        }
+
+        .cta-section {
+            margin: 3rem 0;
+        }
+
+        .cta-card {
+            background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+            color: #ffffff;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .cta-card h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-card p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #ffffff;
+            color: #2e7d32;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .btn-secondary:hover {
+            background: #f5f5f5;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .use-cases-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .use-case-image {
+                height: 200px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+            }
+        }
+    </style>
 </body>
 </html>

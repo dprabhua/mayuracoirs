@@ -137,7 +137,13 @@
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="about.html" class="dropdown-toggle">About Us</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html">Our Story</a></li>
+                            <li><a href="environmental-responsibility.html" class="active">Environmental Responsibility</a></li>
+                        </ul>
+                    </li>
                     <li class="dropdown">
                         <a href="products.html" class="dropdown-toggle">Products</a>
                         <ul class="dropdown-menu">
@@ -172,152 +178,244 @@
         </nav>
     </header>
 
-    <main>
-        <section class="page-header">
-            <div class="container">
-                <h1>Frequently Asked Questions</h1>
-                <p>Find Answers to Common Questions About Our Products and Services</p>
-            </div>
-        </section>
+    <section class="page-header">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answers to common questions about our products and services</p>
+        </div>
+    </section>
 
+    <main class="container">
         <section class="faq-section">
-            <div class="container">
-                <div class="faq-categories">
-                    <button class="faq-category active" data-category="products">Products</button>
-                    <button class="faq-category" data-category="manufacturing">Manufacturing</button>
-                    <button class="faq-category" data-category="quality">Quality</button>
-                    <button class="faq-category" data-category="business">Business</button>
-                </div>
-
-                <div class="faq-search">
-                    <input type="text" placeholder="Search questions..." id="faqSearch">
-                    <i class="fas fa-search"></i>
-                </div>
-
-                <div class="faq-accordion">
-                    <!-- Products Category -->
-                    <div class="faq-item" data-category="products">
-                        <div class="faq-question">
-                            <h3>What is the difference between High EC and Low EC products?</h3>
-                            <i class="fas fa-chevron-down"></i>
+            <div class="faq-grid">
+                <article class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="faq-1">
+                        <div class="accordion-title">
+                            <h3>What is cocopeat?</h3>
                         </div>
-                        <div class="faq-answer">
-                            <p>High EC (Electrical Conductivity) products have higher salt content and are typically used for general agricultural purposes. Low EC products have reduced salt content and are ideal for sensitive plants and seedlings.</p>
+                        <span class="accordion-icon" aria-hidden="true">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </button>
+                    <div id="faq-1" class="accordion-content" role="region" aria-labelledby="faq-1">
+                        <div class="content">
+                            <p>Cocopeat is a natural byproduct of coconut processing. It's made from the pith inside the coconut husk, which is processed to create a versatile growing medium. Our cocopeat is carefully processed to ensure optimal quality and consistency for various agricultural applications.</p>
                         </div>
                     </div>
+                </article>
 
-                    <div class="faq-item" data-category="products">
-                        <div class="faq-question">
-                            <h3>How do I choose the right product for my needs?</h3>
-                            <i class="fas fa-chevron-down"></i>
+                <article class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="faq-2">
+                        <div class="accordion-title">
+                            <h3>What are the benefits of using cocopeat?</h3>
                         </div>
-                        <div class="faq-answer">
-                            <p>The choice depends on your specific requirements. Consider factors like plant type, growth stage, and intended use. Our team can help you select the most suitable product for your needs.</p>
+                        <span class="accordion-icon" aria-hidden="true">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </button>
+                    <div id="faq-2" class="accordion-content" role="region" aria-labelledby="faq-2">
+                        <div class="content">
+                            <p>Cocopeat offers numerous benefits:</p>
+                            <ul>
+                                <li>Excellent water retention and aeration</li>
+                                <li>Natural pH balance</li>
+                                <li>Eco-friendly and sustainable</li>
+                                <li>Free from weeds and pathogens</li>
+                                <li>Reusable and biodegradable</li>
+                            </ul>
                         </div>
                     </div>
+                </article>
 
-                    <div class="faq-item" data-category="products">
-                        <div class="faq-question">
-                            <h3>What are the storage requirements for coir products?</h3>
-                            <i class="fas fa-chevron-down"></i>
+                <article class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="faq-3">
+                        <div class="accordion-title">
+                            <h3>How do I use cocopeat blocks?</h3>
                         </div>
-                        <div class="faq-answer">
-                            <p>Coir products should be stored in a cool, dry place away from direct sunlight. Keep them in their original packaging until use to maintain quality.</p>
+                        <span class="accordion-icon" aria-hidden="true">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </button>
+                    <div id="faq-3" class="accordion-content" role="region" aria-labelledby="faq-3">
+                        <div class="content">
+                            <ol class="steps-list">
+                                <li>Place the block in a container</li>
+                                <li>Add water (approximately 3-4 times the block's weight)</li>
+                                <li>Wait for 15-20 minutes for the block to expand</li>
+                                <li>Break up the expanded cocopeat</li>
+                                <li>Mix with soil or use as a standalone growing medium</li>
+                            </ol>
                         </div>
                     </div>
+                </article>
 
-                    <!-- Manufacturing Category -->
-                    <div class="faq-item" data-category="manufacturing">
-                        <div class="faq-question">
-                            <h3>What is your manufacturing process?</h3>
-                            <i class="fas fa-chevron-down"></i>
+                <article class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="faq-4">
+                        <div class="accordion-title">
+                            <h3>What is the difference between high EC and low EC products?</h3>
                         </div>
-                        <div class="faq-answer">
-                            <p>Our manufacturing process includes material preparation, washing, drying, and compression. Each stage is carefully monitored to ensure consistent quality and performance.</p>
+                        <span class="accordion-icon" aria-hidden="true">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </button>
+                    <div id="faq-4" class="accordion-content" role="region" aria-labelledby="faq-4">
+                        <div class="content">
+                            <p>EC (Electrical Conductivity) measures the salt content in the growing medium:</p>
+                            <ul class="ec-differences">
+                                <li><strong>High EC Products:</strong> Ideal for established plants and hydroponic systems</li>
+                                <li><strong>Low EC Products:</strong> Perfect for seed starting and sensitive plants</li>
+                            </ul>
                         </div>
                     </div>
+                </article>
 
-                    <div class="faq-item" data-category="manufacturing">
-                        <div class="faq-question">
-                            <h3>How do you ensure consistent product quality?</h3>
-                            <i class="fas fa-chevron-down"></i>
+                <article class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="faq-5">
+                        <div class="accordion-title">
+                            <h3>How long does cocopeat last?</h3>
                         </div>
-                        <div class="faq-answer">
-                            <p>We implement strict quality control measures at every stage of production, including regular testing and monitoring of key parameters like EC, pH, and moisture content.</p>
+                        <span class="accordion-icon" aria-hidden="true">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </button>
+                    <div id="faq-5" class="accordion-content" role="region" aria-labelledby="faq-5">
+                        <div class="content">
+                            <p>Cocopeat can last for 3-4 years when properly maintained. It's recommended to:</p>
+                            <ul class="maintenance-list">
+                                <li>Store in a dry place</li>
+                                <li>Keep away from direct sunlight</li>
+                                <li>Rehydrate before use</li>
+                                <li>Replace if it shows signs of decomposition</li>
+                            </ul>
                         </div>
                     </div>
+                </article>
 
-                    <!-- Quality Category -->
-                    <div class="faq-item" data-category="quality">
-                        <div class="faq-question">
-                            <h3>What quality certifications do you have?</h3>
-                            <i class="fas fa-chevron-down"></i>
+                <article class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="faq-6">
+                        <div class="accordion-title">
+                            <h3>What are your quality control measures?</h3>
                         </div>
-                        <div class="faq-answer">
-                            <p>We are ISO 9001:2015 certified and maintain various quality standards. Our products undergo regular testing to ensure they meet international quality requirements.</p>
+                        <span class="accordion-icon" aria-hidden="true">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </button>
+                    <div id="faq-6" class="accordion-content" role="region" aria-labelledby="faq-6">
+                        <div class="content">
+                            <p>We maintain strict quality control throughout our manufacturing process:</p>
+                            <ul>
+                                <li>Regular testing of EC and pH levels</li>
+                                <li>Moisture content monitoring</li>
+                                <li>Physical property analysis</li>
+                                <li>ISO 9001:2015 certified processes</li>
+                                <li>Batch-wise quality documentation</li>
+                            </ul>
                         </div>
                     </div>
+                </article>
 
-                    <div class="faq-item" data-category="quality">
-                        <div class="faq-question">
-                            <h3>How do you test your products?</h3>
-                            <i class="fas fa-chevron-down"></i>
+                <article class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="faq-7">
+                        <div class="accordion-title">
+                            <h3>What are your shipping and delivery options?</h3>
                         </div>
-                        <div class="faq-answer">
-                            <p>We conduct comprehensive testing including EC, pH, moisture content, and physical properties. Our in-house laboratory is equipped with modern testing equipment.</p>
+                        <span class="accordion-icon" aria-hidden="true">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </button>
+                    <div id="faq-7" class="accordion-content" role="region" aria-labelledby="faq-7">
+                        <div class="content">
+                            <p>We offer various shipping options to meet your needs:</p>
+                            <ul>
+                                <li>Domestic shipping across India</li>
+                                <li>International shipping to major markets</li>
+                                <li>Bulk shipping for large orders</li>
+                                <li>Express delivery options</li>
+                                <li>Custom shipping solutions for specific requirements</li>
+                            </ul>
                         </div>
                     </div>
+                </article>
 
-                    <!-- Business Category -->
-                    <div class="faq-item" data-category="business">
-                        <div class="faq-question">
+                <article class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="faq-8">
+                        <div class="accordion-title">
                             <h3>What are your minimum order quantities?</h3>
-                            <i class="fas fa-chevron-down"></i>
                         </div>
-                        <div class="faq-answer">
-                            <p>Minimum order quantities vary by product. Please contact our sales team for specific details based on your requirements.</p>
+                        <span class="accordion-icon" aria-hidden="true">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </button>
+                    <div id="faq-8" class="accordion-content" role="region" aria-labelledby="faq-8">
+                        <div class="content">
+                            <p>Our minimum order quantities vary by product:</p>
+                            <ul>
+                                <li>Cocopeat Blocks: 1 pallet (typically 1000 blocks)</li>
+                                <li>Coco Husk Chips: 1 pallet (typically 500 blocks)</li>
+                                <li>Grow Bags: 1000 pieces</li>
+                                <li>Custom orders: Contact us for specific requirements</li>
+                            </ul>
                         </div>
                     </div>
+                </article>
 
-                    <div class="faq-item" data-category="business">
-                        <div class="faq-question">
-                            <h3>Do you offer international shipping?</h3>
-                            <i class="fas fa-chevron-down"></i>
+                <article class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="faq-9">
+                        <div class="accordion-title">
+                            <h3>How do you ensure sustainable production?</h3>
                         </div>
-                        <div class="faq-answer">
-                            <p>Yes, we ship our products worldwide. We work with reliable logistics partners to ensure safe and timely delivery.</p>
+                        <span class="accordion-icon" aria-hidden="true">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </button>
+                    <div id="faq-9" class="accordion-content" role="region" aria-labelledby="faq-9">
+                        <div class="content">
+                            <p>We are committed to sustainable manufacturing practices:</p>
+                            <ul>
+                                <li>Water recycling and conservation</li>
+                                <li>Energy-efficient production processes</li>
+                                <li>Waste reduction and management</li>
+                                <li>Eco-friendly packaging</li>
+                                <li>Carbon footprint reduction initiatives</li>
+                            </ul>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="faq-cta">
-                    <p>Can't find what you're looking for?</p>
-                    <a href="contact.html" class="cta-button primary">Contact Us</a>
-                </div>
+                <article class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="faq-10">
+                        <div class="accordion-title">
+                            <h3>Do you offer technical support?</h3>
+                        </div>
+                        <span class="accordion-icon" aria-hidden="true">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </button>
+                    <div id="faq-10" class="accordion-content" role="region" aria-labelledby="faq-10">
+                        <div class="content">
+                            <p>Yes, we provide comprehensive technical support:</p>
+                            <ul>
+                                <li>Product application guidance</li>
+                                <li>Growing medium optimization</li>
+                                <li>Custom solution development</li>
+                                <li>On-site technical assistance</li>
+                                <li>Regular training sessions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
 
-        <!-- Related Articles Section -->
-        <section class="related-articles">
+        <section class="cta">
             <div class="container">
-                <h2>Related Articles</h2>
-                <div class="article-grid">
-                    <article class="article-card">
-                        <img src="images/blog1.jpg" alt="Sustainable Gardening Tips" loading="lazy">
-                        <div class="article-content">
-                            <h3>5 Ways to Use Cocopeat for Sustainable Gardening</h3>
-                            <p>Learn how to maximize the benefits of cocopeat in your garden...</p>
-                            <a href="/blog/sustainable-gardening" class="read-more">Read Sustainable Gardening Guide</a>
-                        </div>
-                    </article>
-                    <article class="article-card">
-                        <img src="images/blog2.jpg" alt="Hydroponic Gardening Guide" loading="lazy">
-                        <div class="article-content">
-                            <h3>Complete Guide to Hydroponic Gardening with Cocopeat</h3>
-                            <p>Master the art of hydroponic gardening using our premium cocopeat...</p>
-                            <a href="/blog/hydroponic-guide" class="read-more">Read More</a>
-                        </div>
-                    </article>
+                <div class="cta-content">
+                    <h2>Still Have Questions?</h2>
+                    <p>Our team is here to help you with any specific queries about our products.</p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="cta-button primary">Contact Us</a>
+                        <a href="products.html" class="cta-button secondary">View Products</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -378,67 +476,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // FAQ Accordion Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const faqItems = document.querySelectorAll('.faq-item');
-            const faqCategories = document.querySelectorAll('.faq-category');
-            const faqSearch = document.getElementById('faqSearch');
-
-            // Toggle FAQ answers
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                question.addEventListener('click', () => {
-                    const isActive = item.classList.contains('active');
-                    
-                    // Close all other items
-                    faqItems.forEach(otherItem => {
-                        otherItem.classList.remove('active');
-                    });
-                    
-                    // Toggle current item
-                    if (!isActive) {
-                        item.classList.add('active');
-                    }
-                });
-            });
-
-            // Filter by category
-            faqCategories.forEach(category => {
-                category.addEventListener('click', () => {
-                    const selectedCategory = category.dataset.category;
-                    
-                    // Update active category
-                    faqCategories.forEach(cat => cat.classList.remove('active'));
-                    category.classList.add('active');
-                    
-                    // Show/hide questions
-                    faqItems.forEach(item => {
-                        if (selectedCategory === 'all' || item.dataset.category === selectedCategory) {
-                            item.style.display = 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            });
-
-            // Search functionality
-            faqSearch.addEventListener('input', (e) => {
-                const searchTerm = e.target.value.toLowerCase();
-                
-                faqItems.forEach(item => {
-                    const question = item.querySelector('h3').textContent.toLowerCase();
-                    const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
-                    
-                    if (question.includes(searchTerm) || answer.includes(searchTerm)) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html> 

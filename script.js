@@ -226,10 +226,12 @@ document.addEventListener('DOMContentLoaded', function() {
 // Defer non-critical JavaScript
 function loadDeferredStyles() {
     const addStylesNode = document.getElementById('deferred-styles');
-    const replacement = document.createElement('div');
-    replacement.innerHTML = addStylesNode.textContent;
-    document.body.appendChild(replacement);
-    addStylesNode.parentElement.removeChild(addStylesNode);
+    if (addStylesNode) {
+        const replacement = document.createElement('div');
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement);
+        addStylesNode.parentElement.removeChild(addStylesNode);
+    }
 }
 
 // Load deferred styles
@@ -261,44 +263,54 @@ document.addEventListener('DOMContentLoaded', function() {
 // Analytics Helper Functions
 const analytics = {
     init: function() {
-        // Track search engine referrals
-        const referrer = document.referrer;
-        if (referrer) {
-            const searchEngines = {
-                'google': 'Google',
-                'bing': 'Bing',
-                'yahoo': 'Yahoo',
-                'duckduckgo': 'DuckDuckGo',
-                'baidu': 'Baidu',
-                'yandex': 'Yandex'
-            };
+        // Check if gtag is available
+        if (typeof gtag !== 'function') {
+            console.warn('Google Analytics (gtag) is not loaded');
+            return;
+        }
 
-            for (const [domain, name] of Object.entries(searchEngines)) {
-                if (referrer.toLowerCase().includes(domain)) {
-                    gtag('event', 'search_engine_referral', {
-                        'search_engine': name,
-                        'referrer': referrer,
-                        'page_path': window.location.pathname
-                    });
-                    break;
+        try {
+            // Track search engine referrals
+            const referrer = document.referrer;
+            if (referrer) {
+                const searchEngines = {
+                    'google': 'Google',
+                    'bing': 'Bing',
+                    'yahoo': 'Yahoo',
+                    'duckduckgo': 'DuckDuckGo',
+                    'baidu': 'Baidu',
+                    'yandex': 'Yandex'
+                };
+
+                for (const [domain, name] of Object.entries(searchEngines)) {
+                    if (referrer.toLowerCase().includes(domain)) {
+                        gtag('event', 'search_engine_referral', {
+                            'search_engine': name,
+                            'referrer': referrer,
+                            'page_path': window.location.pathname
+                        });
+                        break;
+                    }
                 }
             }
-        }
 
-        // Track user location (country level only, respecting privacy)
-        if (navigator.language) {
-            gtag('event', 'user_location', {
-                'language': navigator.language,
+            // Track user location (country level only, respecting privacy)
+            if (navigator.language) {
+                gtag('event', 'user_location', {
+                    'language': navigator.language,
+                    'page_path': window.location.pathname
+                });
+            }
+
+            // Track device and browser information
+            gtag('event', 'device_info', {
+                'device_type': this.getDeviceType(),
+                'browser': this.getBrowserInfo(),
                 'page_path': window.location.pathname
             });
+        } catch (error) {
+            console.error('Error initializing analytics:', error);
         }
-
-        // Track device and browser information
-        gtag('event', 'device_info', {
-            'device_type': this.getDeviceType(),
-            'browser': this.getBrowserInfo(),
-            'page_path': window.location.pathname
-        });
     },
 
     getDeviceType: function() {
@@ -324,7 +336,65 @@ const analytics = {
     }
 };
 
-// Initialize analytics when DOM is loaded
+// Initialize analytics when DOM is loaded and gtag is available
 document.addEventListener('DOMContentLoaded', function() {
-    analytics.init();
+    // Wait for gtag to be available
+    const checkGtag = setInterval(() => {
+        if (typeof gtag === 'function') {
+            clearInterval(checkGtag);
+            analytics.init();
+        }
+    }, 100);
+
+    // Stop checking after 5 seconds
+    setTimeout(() => {
+        clearInterval(checkGtag);
+        if (typeof gtag !== 'function') {
+            console.warn('Google Analytics (gtag) failed to load within timeout');
+        }
+    }, 5000);
+});
+
+// Accordion Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const accordionItems = document.querySelectorAll('.accordion-item');
+    
+    accordionItems.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        const content = item.querySelector('.accordion-content');
+        const icon = header.querySelector('.accordion-icon i');
+        
+        if (header && content) {
+            header.addEventListener('click', () => {
+                const isExpanded = header.getAttribute('aria-expanded') === 'true';
+                
+                // Close all other accordions
+                accordionItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        const otherHeader = otherItem.querySelector('.accordion-header');
+                        const otherContent = otherItem.querySelector('.accordion-content');
+                        const otherIcon = otherHeader.querySelector('.accordion-icon i');
+                        
+                        otherHeader.setAttribute('aria-expanded', 'false');
+                        otherContent.style.maxHeight = '0';
+                        otherIcon.classList.remove('fa-chevron-up');
+                        otherIcon.classList.add('fa-chevron-down');
+                    }
+                });
+                
+                // Toggle current accordion
+                header.setAttribute('aria-expanded', !isExpanded);
+                
+                if (isExpanded) {
+                    content.style.maxHeight = '0';
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                }
+            });
+        }
+    });
 }); 
