@@ -154,8 +154,6 @@
             </div>
         </section>
 
-
-
         <section class="cta">
             <div class="container">
                 <div class="cta-content">
@@ -263,5 +261,135 @@
     </script>
 
     <script src="script.js"></script>
+    <script>
+        const style = document.createElement('style');
+        style.textContent = `
+            .mission-vision-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                margin: 3rem 0;
+            }
+
+            .mission-card,
+            .vision-card {
+                background: #ffffff;
+                padding: 2.5rem;
+                border-radius: 16px;
+                text-align: center;
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+                border: 1px solid rgba(46, 125, 50, 0.1);
+                box-shadow: 0 4px 6px rgba(46, 125, 50, 0.05),
+                            0 1px 3px rgba(46, 125, 50, 0.1);
+            }
+
+            .mission-card:hover,
+            .vision-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 15px rgba(46, 125, 50, 0.1),
+                            0 3px 6px rgba(46, 125, 50, 0.15);
+            }
+
+            .card-icon {
+                width: 80px;
+                height: 80px;
+                margin: 0 auto 1.5rem;
+                background: rgba(46, 125, 50, 0.1);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease;
+            }
+
+            .mission-card:hover .card-icon,
+            .vision-card:hover .card-icon {
+                background: #2e7d32;
+                transform: scale(1.1);
+            }
+
+            .card-icon i {
+                font-size: 2rem;
+                color: #2e7d32;
+                transition: all 0.3s ease;
+            }
+
+            .mission-card:hover .card-icon i,
+            .vision-card:hover .card-icon i {
+                color: #ffffff;
+            }
+
+            .mission-card h3,
+            .vision-card h3 {
+                color: #2e7d32;
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+                font-weight: 600;
+            }
+
+            .mission-card p,
+            .vision-card p {
+                color: #444;
+                line-height: 1.6;
+                font-size: 1.1rem;
+                margin: 0;
+            }
+
+            .mission-card::before,
+            .vision-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 4px;
+                background: linear-gradient(90deg, #2e7d32, #4caf50);
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.3s ease;
+            }
+
+            .mission-card:hover::before,
+            .vision-card:hover::before {
+                transform: scaleX(1);
+            }
+
+            @media (max-width: 768px) {
+                .mission-vision-grid {
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
+                    margin: 2rem 0;
+                }
+
+                .mission-card,
+                .vision-card {
+                    padding: 2rem;
+                }
+
+                .card-icon {
+                    width: 70px;
+                    height: 70px;
+                    margin-bottom: 1.2rem;
+                }
+
+                .card-icon i {
+                    font-size: 1.8rem;
+                }
+
+                .mission-card h3,
+                .vision-card h3 {
+                    font-size: 1.3rem;
+                }
+
+                .mission-card p,
+                .vision-card p {
+                    font-size: 1rem;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>
