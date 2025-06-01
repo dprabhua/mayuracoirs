@@ -130,7 +130,7 @@ let currentTestimonial = 0;
 const testimonials = document.querySelectorAll('.testimonial');
 const testimonialSlider = document.querySelector('.testimonial-slider');
 
-if (testimonials.length > 1) {
+if (testimonials.length > 1 && testimonialSlider) {
     setInterval(() => {
         currentTestimonial = (currentTestimonial + 1) % testimonials.length;
         testimonialSlider.style.transform = `translateX(-${currentTestimonial * 100}%)`;
@@ -242,22 +242,38 @@ else window.addEventListener('load', loadDeferredStyles);
 
 // Dropdown Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
-    const dropdownToggle = document.querySelector('.dropdown-toggle');
-    const dropdown = document.querySelector('.dropdown');
+    const dropdowns = document.querySelectorAll('.dropdown');
     
-    if (dropdownToggle) {
-        dropdownToggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            dropdown.classList.toggle('active');
-        });
+    dropdowns.forEach(dropdown => {
+        const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
         
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!dropdown.contains(e.target)) {
+        if (dropdownToggle && dropdownMenu) {
+            dropdownToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Close all other dropdowns
+                dropdowns.forEach(otherDropdown => {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current dropdown
+                dropdown.classList.toggle('active');
+            });
+        }
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown')) {
+            dropdowns.forEach(dropdown => {
                 dropdown.classList.remove('active');
-            }
-        });
-    }
+            });
+        }
+    });
 });
 
 // Analytics Helper Functions
@@ -336,23 +352,29 @@ const analytics = {
     }
 };
 
-// Initialize analytics when DOM is loaded and gtag is available
+// Initialize analytics when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Wait for gtag to be available
+    // If gtag is already available, initialize immediately
+    if (typeof gtag === 'function') {
+        analytics.init();
+        return;
+    }
+
+    // Otherwise, wait for gtag to be available
+    let attempts = 0;
+    const maxAttempts = 50; // 10 seconds total (50 * 200ms)
+    
     const checkGtag = setInterval(() => {
+        attempts++;
+        
         if (typeof gtag === 'function') {
             clearInterval(checkGtag);
             analytics.init();
+        } else if (attempts >= maxAttempts) {
+            clearInterval(checkGtag);
+            console.warn('Google Analytics (gtag) failed to load after multiple attempts');
         }
-    }, 100);
-
-    // Stop checking after 5 seconds
-    setTimeout(() => {
-        clearInterval(checkGtag);
-        if (typeof gtag !== 'function') {
-            console.warn('Google Analytics (gtag) failed to load within timeout');
-        }
-    }, 5000);
+    }, 200); // Check every 200ms
 });
 
 // Accordion Functionality

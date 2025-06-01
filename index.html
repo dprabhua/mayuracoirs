@@ -24,8 +24,8 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     
     <!-- Preload Critical Resources -->
-    <link rel="preload" href="images/hero-bg.webp" as="image" type="image/webp">
-    <link rel="preload" href="images/logo.webp" as="image" type="image/webp">
+    <link rel="preload" href="images/webp/hero-bg.webp" as="image" type="image/webp">
+    <link rel="preload" href="images/webp/logo.webp" as="image" type="image/webp">
     <link rel="preload" href="styles.min.css" as="style">
     <link rel="preload" href="script.js" as="script">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style">
@@ -71,7 +71,6 @@
     <noscript><link rel="stylesheet" href="styles.min.css"></noscript>
 
     <!-- Privacy-friendly Analytics with Deferred Loading -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K722MX11X0"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -83,6 +82,7 @@
             'send_page_view': true
         });
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K722MX11X0" onerror="console.warn('Failed to load Google Analytics');"></script>
 
     <!-- Image Schema Markup -->
     <script type="application/ld+json">
@@ -544,7 +544,7 @@
         <section id="products" class="products">
             <div class="container">
                 <div class="section-header">
-                <h2>Our Products</h2>
+                    <h2>Our Products</h2>
                     <p>High-quality, sustainable coir products for all your agricultural needs</p>
                 </div>
                 <div class="product-grid">
@@ -641,7 +641,7 @@
                             <i class="fas fa-leaf"></i>
                         </div>
                         <h3>Eco-Friendly</h3>
-                        <p>100% natural and organic products that support sustainable agriculture</p>
+                        <p>100% natural products collected as a waste byproduct of coconut production, contributing to waste reduction and a circular economy</p>
                     </div>
                     <div class="feature-card animate">
                         <div class="feature-icon">
@@ -656,6 +656,13 @@
                         </div>
                         <h3>Sustainable</h3>
                         <p>Made from renewable coconut husks, supporting circular economy</p>
+                    </div>
+                    <div class="feature-card animate">
+                        <div class="feature-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h3>Sustainable Manufacturing</h3>
+                        <p>Energy-friendly and water-saving techniques reducing carbon emissions</p>
                     </div>
                     <div class="feature-card animate">
                         <div class="feature-icon">
@@ -685,13 +692,13 @@
         <section class="testimonials">
             <div class="container">
                 <div class="section-header">
-                <h2>What Our Customers Say</h2>
+                    <h2>What Our Customers Say</h2>
                     <p>Trusted by farmers and gardeners across India</p>
                 </div>
-                <div class="testimonial-slider">
+                <div class="testimonial">
                     <div class="testimonial">
                         <div class="testimonial-content">
-                        <p>"Mayuracoirs has transformed my gardening experience. The quality of their cocopeat blocks is unmatched!"</p>
+                            <p>"This cocopeat works great for my hydroponic tomatoes! I've seen a significant increase in yield since switching to Mayuracoirs' products. The quality is consistently excellent."</p>
                         </div>
                         <div class="testimonial-author">
                             <picture>
@@ -699,9 +706,61 @@
                                 <img src="images/customer1.jpg" alt="Customer Testimonial" width="400" height="300" loading="lazy">
                             </picture>
                             <div class="author-info">
-                                <h4>Rajesh Kumar</h4>
-                                <p>Organic Farmer, Tamil Nadu</p>
+                                <h4>Arun Kumar</h4>
+                                <p>Commercial Hydroponic Farmer, Bangalore</p>
                             </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"Mayuracoirs' on-time delivery and committed quality have made them our go-to supplier for bulk orders. Their products have significantly improved our soil structure and water retention."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <picture>
+                                <source srcset="images/webp/customer2.webp" type="image/webp">
+                                <img src="images/customer2.jpg" alt="Customer Testimonial" width="400" height="300" loading="lazy">
+                            </picture>
+                            <div class="author-info">
+                                <h4>Priya Sharma</h4>
+                                <p>Agricultural Consultant, Tamil Nadu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-studies">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Success Stories</h2>
+                    <p>Real results from our valued customers</p>
+                </div>
+                <div class="case-studies-grid">
+                    <div class="case-study-card">
+                        <div class="case-study-image">
+                            <picture>
+                                <source srcset="images/webp/case-study1.webp" type="image/webp">
+                                <img src="images/case-study1.jpg" alt="Commercial Hydroponic Farm Success Story" width="400" height="300" loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="case-study-content">
+                            <h3>Commercial Hydroponic Farm Transformation</h3>
+                            <p>How a Bangalore-based farm achieved 40% higher yields using our cocopeat products.</p>
+                            <a href="case-studies.html#hydroponic-farm" class="btn">Read Case Study</a>
+                        </div>
+                    </div>
+                    <div class="case-study-card">
+                        <div class="case-study-image">
+                            <picture>
+                                <source srcset="images/webp/case-study2.webp" type="image/webp">
+                                <img src="images/case-study2.jpg" alt="Organic Farming Success Story" width="400" height="300" loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="case-study-content">
+                            <h3>Organic Farming Success</h3>
+                            <p>A 10-acre organic farm's journey to sustainable agriculture with our coir products.</p>
+                            <a href="case-studies.html#organic-farm" class="btn">Read Case Study</a>
                         </div>
                     </div>
                 </div>
@@ -752,19 +811,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Social Proof Section -->
-        <section class="social-proof">
-            <div class="container">
-                <h2>As Featured In</h2>
-                <div class="featured-logos">
-                    <img src="images/featured1.png" alt="Featured in Gardening Magazine" loading="lazy">
-                    <img src="images/featured2.png" alt="Featured in Agriculture Today" loading="lazy">
-                    <!-- Add more featured logos -->
-                </div>
-            </div>
-        </section>
-    </main>
 
     <footer class="footer">
         <div class="container">
