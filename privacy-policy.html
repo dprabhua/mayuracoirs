@@ -41,15 +41,17 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="manifest" href="manifest.json">
 
-    <!-- Privacy-friendly Analytics -->
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K722MX11X0" onerror="console.warn('Failed to load Google Analytics');"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX', {
+        gtag('config', 'G-K722MX11X0', {
             'anonymize_ip': true,
             'cookie_domain': 'mayuracoirs.com',
-            'cookie_flags': 'SameSite=None;Secure'
+            'cookie_flags': 'SameSite=None;Secure',
+            'send_page_view': true
         });
     </script>
 
