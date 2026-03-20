@@ -28,7 +28,7 @@
     <link rel="preload" href="images/webp/hero-bg.webp" as="image" type="image/webp">
     <link rel="preload" href="images/webp/logo.webp" as="image" type="image/webp">
     <link rel="preload" href="styles.min.css" as="style">
-    <link rel="preload" href="script.js" as="script">
+    <link rel="preload" href="script.min.js" as="script">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style">
     
     <!-- Canonical and Alternate Language Tags -->
@@ -389,6 +389,41 @@
             "seller": {
                 "@type": "Organization",
                 "name": "Mayuracoirs"
+            },
+            "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingRate": {
+                    "@type": "MonetaryAmount",
+                    "value": "0",
+                    "currency": "INR"
+                },
+                "shippingDestination": {
+                    "@type": "DefinedRegion",
+                    "addressCountry": "IN"
+                },
+                "deliveryTime": {
+                    "@type": "ShippingDeliveryTime",
+                    "handlingTime": {
+                        "@type": "QuantitativeValue",
+                        "minValue": "1",
+                        "maxValue": "3",
+                        "unitCode": "DAY"
+                    },
+                    "transitTime": {
+                        "@type": "QuantitativeValue",
+                        "minValue": "2",
+                        "maxValue": "5",
+                        "unitCode": "DAY"
+                    }
+                }
+            },
+            "hasMerchantReturnPolicy": {
+                "@type": "MerchantReturnPolicy",
+                "applicableCountry": "IN",
+                "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                "merchantReturnDays": 7,
+                "returnMethod": "https://schema.org/ReturnByMail",
+                "returnFees": "https://schema.org/FreeReturn"
             }
         },
         "aggregateRating": {
@@ -891,7 +926,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.min.js"></script>
     <script>
         // Region-specific affiliate handling
         document.addEventListener('DOMContentLoaded', function() {
