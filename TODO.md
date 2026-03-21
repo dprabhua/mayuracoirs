@@ -3,6 +3,11 @@
 ## 🔴 This Week (Highest Impact)
 
 - [ ] Deploy the website to hosting / FTP
+- [ ] **Fix Google Merchant Center "User cannot complete purchase" blocker**
+  - Set up Instamojo (free) or Razorpay account
+  - Create a payment link for each product
+  - Add "Buy Now" buttons to all product pages
+  - This is blocking ALL products from showing on Google Shopping
 - [ ] Submit sitemap in Google Search Console → Sitemaps → https://mayuracoirs.com/sitemap.xml
 - [ ] Request indexing for 5 blog posts + all product pages (GSC → URL Inspection → each URL)
 - [ ] Create Google Business Profile at business.google.com

@@ -36,48 +36,90 @@
     <!-- Product Schema -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "Cocopeat Blocks",
-        "image": "https://mayuracoirs.com/images/cocopeat.jpg",
-        "description": "High-quality cocopeat blocks for superior water retention and aeration. Perfect for hydroponics and soil conditioning.",
-        "brand": {
-            "@type": "Brand",
-            "name": "Mayuracoirs"
-        },
-        "offers": {
-            "@type": "Offer",
-            "url": "https://mayuracoirs.com/cocopeat-blocks.html",
-            "priceCurrency": "INR",
-            "price": "550",
-            "availability": "https://schema.org/InStock",
-            "seller": {
-                "@type": "Organization",
-                "name": "Mayuracoirs"
-            }
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "reviewCount": "150"
-        },
-        "review": [
-            {
-                "@type": "Review",
-                "author": {
-                    "@type": "Person",
-                    "name": "Arun G."
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Cocopeat Blocks",
+    "image": "https://mayuracoirs.com/images/cocopeat.jpg",
+    "description": "High-quality cocopeat blocks for superior water retention and aeration. Perfect for hydroponics and soil conditioning.",
+    "brand": {
+        "@type": "Brand",
+        "name": "Mayuracoirs"
+    },
+    "mpn": "MC-CB-001",
+    "offers": {
+        "@type": "Offer",
+        "url": "https://mayuracoirs.com/cocopeat-blocks.html",
+        "priceCurrency": "INR",
+        "price": "550",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock",
+        "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": "0",
+                "currency": "INR"
+            },
+            "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": "IN"
+            },
+            "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": "1",
+                    "maxValue": "3",
+                    "unitCode": "DAY"
                 },
-                "datePublished": "2024-03-14",
-                "reviewBody": "Good quality cocopeat blocks. My plants are doing well.",
-                "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": "4",
-                    "bestRating": "5"
+                "transitTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": "2",
+                    "maxValue": "5",
+                    "unitCode": "DAY"
                 }
             }
-        ]
+        },
+        "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "applicableCountry": "IN",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+            "merchantReturnDays": 7,
+            "returnMethod": "https://schema.org/ReturnByMail",
+            "returnFees": "https://schema.org/FreeReturn"
+        },
+        "seller": {
+            "@type": "Organization",
+            "name": "Mayuracoirs"
+        }
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "150"
+    },
+    "review": [
+        {
+            "@type": "Review",
+            "author": {
+                "@type": "Person",
+                "name": "Arun G."
+            },
+            "datePublished": "2024-03-14",
+            "reviewBody": "Good quality cocopeat blocks. My plants are doing well.",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "4",
+                "bestRating": "5"
+            }
+        }
+    ],
+    "weight": {
+        "@type": "QuantitativeValue",
+        "value": "5",
+        "unitCode": "KGM"
     }
+}
     </script>
     <!-- Hreflang Tags -->
     <link rel="alternate" hreflang="en" href="https://mayuracoirs.com/cocopeat-blocks.html">

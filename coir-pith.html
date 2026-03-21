@@ -36,142 +36,169 @@
     <!-- Product Schema -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "Coir Pith",
-        "image": "https://mayuracoirs.com/images/coir-pith.jpg",
-        "description": "Premium coir pith for soil amendment and potting mixes. Enhances soil structure and promotes healthy root development.",
-        "brand": {
-            "@type": "Brand",
-            "name": "Mayuracoirs"
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Coir Pith",
+    "image": "https://mayuracoirs.com/images/coir-pith.jpg",
+    "description": "Premium coir pith for soil amendment and potting mixes. Enhances soil structure and promotes healthy root development.",
+    "brand": {
+        "@type": "Brand",
+        "name": "Mayuracoirs"
+    },
+    "mpn": "MC-CP-001",
+    "sku": "CP-001",
+    "category": "Garden & Outdoor > Soil & Amendments > Coco Coir",
+    "offers": {
+        "@type": "Offer",
+        "url": "https://mayuracoirs.com/coir-pith.html",
+        "price": "450",
+        "priceCurrency": "INR",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": {
+            "@type": "Organization",
+            "name": "Mayuracoirs",
+            "url": "https://mayuracoirs.com",
+            "logo": "https://mayuracoirs.com/images/logo.png",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Jalakantapuram",
+                "addressLocality": "Salem",
+                "addressRegion": "Tamil Nadu",
+                "postalCode": "636501",
+                "addressCountry": "IN"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+91-9994754402",
+                "contactType": "customer service",
+                "areaServed": "IN",
+                "availableLanguage": [
+                    "English",
+                    "Tamil"
+                ]
+            }
         },
-        "sku": "CP-001",
-        "category": "Garden & Outdoor > Soil & Amendments > Coco Coir",
-        "offers": {
-            "@type": "Offer",
-            "url": "https://mayuracoirs.com/coir-pith.html",
-            "priceValidUntil": "2026-12-31",
-            "availability": "https://schema.org/InStock",
-            "itemCondition": "https://schema.org/NewCondition",
-            "seller": {
-                "@type": "Organization",
-                "name": "Mayuracoirs",
-                "url": "https://mayuracoirs.com",
-                "logo": "https://mayuracoirs.com/images/logo.png",
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "Jalakantapuram",
-                    "addressLocality": "Salem",
-                    "addressRegion": "Tamil Nadu",
-                    "postalCode": "636501",
-                    "addressCountry": "IN"
+        "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": "0",
+                "currency": "INR"
+            },
+            "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": "IN"
+            },
+            "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": "1",
+                    "maxValue": "3",
+                    "unitCode": "DAY"
                 },
-                "contactPoint": {
-                    "@type": "ContactPoint",
-                    "telephone": "+91-9994754402",
-                    "contactType": "customer service",
-                    "areaServed": "IN",
-                    "availableLanguage": ["English", "Tamil"]
+                "transitTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": "2",
+                    "maxValue": "5",
+                    "unitCode": "DAY"
                 }
             },
-            "shippingDetails": {
-                "@type": "OfferShippingDetails",
-                "shippingRate": {
-                    "@type": "MonetaryAmount",
-                    "value": "0",
-                    "currency": "INR"
-                },
-                "shippingDestination": {
-                    "@type": "DefinedRegion",
-                    "addressCountry": "IN"
-                },
-                "deliveryTime": {
-                    "@type": "ShippingDeliveryTime",
-                    "handlingTime": {
-                        "@type": "QuantitativeValue",
-                        "minValue": "1",
-                        "maxValue": "3",
-                        "unitCode": "DAY"
-                    },
-                    "transitTime": {
-                        "@type": "QuantitativeValue",
-                        "minValue": "2",
-                        "maxValue": "5",
-                        "unitCode": "DAY"
-                    }
-                }
+            "hasMerchantReturnPolicy": {
+                "@type": "MerchantReturnPolicy",
+                "applicableCountry": "IN",
+                "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                "merchantReturnDays": 7,
+                "returnMethod": "https://schema.org/ReturnByMail",
+                "returnFees": "https://schema.org/FreeReturn"
             }
         },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.7",
-            "reviewCount": "120",
-            "bestRating": "5",
-            "worstRating": "1"
+        "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "applicableCountry": "IN",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+            "merchantReturnDays": 7,
+            "returnMethod": "https://schema.org/ReturnByMail",
+            "returnFees": "https://schema.org/FreeReturn"
+        }
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "reviewCount": "120",
+        "bestRating": "5",
+        "worstRating": "1"
+    },
+    "additionalProperty": [
+        {
+            "@type": "PropertyValue",
+            "name": "EC Level",
+            "value": "0.5 - 1.0 mS/cm"
         },
-        "additionalProperty": [
-            {
-                "@type": "PropertyValue",
-                "name": "EC Level",
-                "value": "0.5 - 1.0 mS/cm"
+        {
+            "@type": "PropertyValue",
+            "name": "pH Level",
+            "value": "5.8 - 6.5"
+        },
+        {
+            "@type": "PropertyValue",
+            "name": "Water Retention",
+            "value": "8-10 times its weight"
+        },
+        {
+            "@type": "PropertyValue",
+            "name": "Material",
+            "value": "100% Natural Coconut Coir"
+        },
+        {
+            "@type": "PropertyValue",
+            "name": "Weight",
+            "value": "5 kg"
+        },
+        {
+            "@type": "PropertyValue",
+            "name": "Packaging",
+            "value": "Compressed Blocks"
+        }
+    ],
+    "review": [
+        {
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
             },
-            {
-                "@type": "PropertyValue",
-                "name": "pH Level",
-                "value": "5.8 - 6.5"
+            "author": {
+                "@type": "Person",
+                "name": "John Doe"
             },
-            {
-                "@type": "PropertyValue",
-                "name": "Water Retention",
-                "value": "8-10 times its weight"
+            "datePublished": "2024-01-15",
+            "reviewBody": "Excellent coir pith quality. Perfect for our potting mixes."
+        },
+        {
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "4",
+                "bestRating": "5"
             },
-            {
-                "@type": "PropertyValue",
-                "name": "Material",
-                "value": "100% Natural Coconut Coir"
+            "author": {
+                "@type": "Person",
+                "name": "Jane Smith"
             },
-            {
-                "@type": "PropertyValue",
-                "name": "Weight",
-                "value": "5 kg"
-            },
-            {
-                "@type": "PropertyValue",
-                "name": "Packaging",
-                "value": "Compressed Blocks"
-            }
-        ],
-        "review": [
-            {
-                "@type": "Review",
-                "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": "5",
-                    "bestRating": "5"
-                },
-                "author": {
-                    "@type": "Person",
-                    "name": "John Doe"
-                },
-                "datePublished": "2024-01-15",
-                "reviewBody": "Excellent coir pith quality. Perfect for our potting mixes."
-            },
-            {
-                "@type": "Review",
-                "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": "4",
-                    "bestRating": "5"
-                },
-                "author": {
-                    "@type": "Person",
-                    "name": "Jane Smith"
-                },
-                "datePublished": "2024-02-20",
-                "reviewBody": "Good product, consistent quality. Would recommend for soil amendment."
-            }
-        ]
+            "datePublished": "2024-02-20",
+            "reviewBody": "Good product, consistent quality. Would recommend for soil amendment."
+        }
+    ],
+    "weight": {
+        "@type": "QuantitativeValue",
+        "value": "5",
+        "unitCode": "KGM"
     }
+}
     </script>
     <!-- Hreflang Tags -->
     <link rel="alternate" hreflang="en" href="https://mayuracoirs.com/coir-pith.html">
